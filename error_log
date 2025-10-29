@@ -1,0 +1,75 @@
+[06-Jun-2025 22:27:03 Asia/Ho_Chi_Minh] PHP Warning:  require_once(vendor/autoload.php): Failed to open stream: No such file or directory in /home/banhmich/public_html/license_api.php on line 13
+[06-Jun-2025 22:27:03 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/banhmich/public_html/license_api.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/banhmich/public_html/license_api.php on line 13
+[06-Jun-2025 22:27:33 Asia/Ho_Chi_Minh] PHP Warning:  require_once(vendor/autoload.php): Failed to open stream: No such file or directory in /home/banhmich/public_html/license_api.php on line 13
+[06-Jun-2025 22:27:33 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/banhmich/public_html/license_api.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/banhmich/public_html/license_api.php on line 13
+[06-Jun-2025 22:28:04 Asia/Ho_Chi_Minh] PHP Warning:  require_once(vendor/autoload.php): Failed to open stream: No such file or directory in /home/banhmich/public_html/license_api.php on line 13
+[06-Jun-2025 22:28:04 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/banhmich/public_html/license_api.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/banhmich/public_html/license_api.php on line 13
+[06-Jun-2025 22:28:33 Asia/Ho_Chi_Minh] PHP Warning:  require_once(vendor/autoload.php): Failed to open stream: No such file or directory in /home/banhmich/public_html/license_api.php on line 13
+[06-Jun-2025 22:28:33 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/banhmich/public_html/license_api.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/banhmich/public_html/license_api.php on line 13
+[06-Jun-2025 22:28:34 Asia/Ho_Chi_Minh] PHP Warning:  require_once(vendor/autoload.php): Failed to open stream: No such file or directory in /home/banhmich/public_html/license_api.php on line 13
+[06-Jun-2025 22:28:34 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/banhmich/public_html/license_api.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/banhmich/public_html/license_api.php on line 13
+[06-Jun-2025 22:28:55 Asia/Ho_Chi_Minh] PHP Warning:  require_once(vendor/autoload.php): Failed to open stream: No such file or directory in /home/banhmich/public_html/license_api.php on line 13
+[06-Jun-2025 22:28:55 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/banhmich/public_html/license_api.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/banhmich/public_html/license_api.php on line 13
+[06-Jun-2025 22:29:25 Asia/Ho_Chi_Minh] PHP Warning:  require_once(vendor/autoload.php): Failed to open stream: No such file or directory in /home/banhmich/public_html/license_api.php on line 13
+[06-Jun-2025 22:29:25 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/banhmich/public_html/license_api.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/banhmich/public_html/license_api.php on line 13
+[06-Jun-2025 22:29:56 Asia/Ho_Chi_Minh] PHP Warning:  require_once(vendor/autoload.php): Failed to open stream: No such file or directory in /home/banhmich/public_html/license_api.php on line 13
+[06-Jun-2025 22:29:56 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/banhmich/public_html/license_api.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/banhmich/public_html/license_api.php on line 13
+[06-Jun-2025 22:30:26 Asia/Ho_Chi_Minh] PHP Warning:  require_once(vendor/autoload.php): Failed to open stream: No such file or directory in /home/banhmich/public_html/license_api.php on line 13
+[06-Jun-2025 22:30:26 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/banhmich/public_html/license_api.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/banhmich/public_html/license_api.php on line 13
+[29-Aug-2025 07:54:25 Asia/Ho_Chi_Minh] Attempt 1 - HTTP Code: 0, Total Time: 10.001034s
+[29-Aug-2025 07:54:25 Asia/Ho_Chi_Minh] cURL Error on attempt 1: Connection timed out after 10001 milliseconds
+[29-Aug-2025 07:54:36 Asia/Ho_Chi_Minh] Attempt 2 - HTTP Code: 0, Total Time: 10.001187s
+[29-Aug-2025 07:54:36 Asia/Ho_Chi_Minh] cURL Error on attempt 2: Connection timed out after 10001 milliseconds
+[29-Aug-2025 07:54:47 Asia/Ho_Chi_Minh] Attempt 3 - HTTP Code: 0, Total Time: 10.00091s
+[29-Aug-2025 07:54:47 Asia/Ho_Chi_Minh] cURL Error on attempt 3: Connection timed out after 10000 milliseconds
+[29-Aug-2025 08:12:16 Asia/Ho_Chi_Minh] Attempt 1 with API key AIzaSyCJsxjCu6vjyC2c... - HTTP Code: 0, Total Time: 10.000855s
+[29-Aug-2025 08:12:16 Asia/Ho_Chi_Minh] cURL Error on attempt 1 with API key AIzaSyCJsxjCu6vjyC2c...: Connection timed out after 10000 milliseconds
+[29-Aug-2025 08:12:27 Asia/Ho_Chi_Minh] Attempt 2 with API key AIzaSyDqtbnBtGNh97yl... - HTTP Code: 0, Total Time: 10.00084s
+[29-Aug-2025 08:12:27 Asia/Ho_Chi_Minh] cURL Error on attempt 2 with API key AIzaSyDqtbnBtGNh97yl...: Connection timed out after 10000 milliseconds
+[29-Aug-2025 08:12:38 Asia/Ho_Chi_Minh] Attempt 3 with API key AIzaSyAc8oFERCiAk2Ua... - HTTP Code: 0, Total Time: 10.001229s
+[29-Aug-2025 08:12:38 Asia/Ho_Chi_Minh] cURL Error on attempt 3 with API key AIzaSyAc8oFERCiAk2Ua...: Connection timed out after 10001 milliseconds
+[29-Aug-2025 08:22:56 Asia/Ho_Chi_Minh] Attempt 1 with API key AIzaSyCJsxjCu6vjyC2c... - HTTP Code: 0, Total Time: 10.000995s
+[29-Aug-2025 08:22:56 Asia/Ho_Chi_Minh] cURL Error on attempt 1 with API key AIzaSyCJsxjCu6vjyC2c...: Connection timed out after 10000 milliseconds
+[29-Aug-2025 08:23:07 Asia/Ho_Chi_Minh] Attempt 2 with API key AIzaSyDqtbnBtGNh97yl... - HTTP Code: 0, Total Time: 10.000439s
+[29-Aug-2025 08:23:07 Asia/Ho_Chi_Minh] cURL Error on attempt 2 with API key AIzaSyDqtbnBtGNh97yl...: Connection timed out after 10000 milliseconds
+[29-Aug-2025 08:23:18 Asia/Ho_Chi_Minh] Attempt 3 with API key AIzaSyAc8oFERCiAk2Ua... - HTTP Code: 0, Total Time: 10.000672s
+[29-Aug-2025 08:23:18 Asia/Ho_Chi_Minh] cURL Error on attempt 3 with API key AIzaSyAc8oFERCiAk2Ua...: Connection timed out after 10000 milliseconds
+[29-Aug-2025 08:35:28 Asia/Ho_Chi_Minh] CURL Error: Connection timed out after 30001 milliseconds (Code: 28)
+[29-Aug-2025 08:36:28 Asia/Ho_Chi_Minh] PHP Warning:  file_get_contents(https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDqtbnBtGNh97ylF_RPRxU9I7xXw2rTIDg): Failed to open stream: Connection timed out in /home/banhmich/public_html/translate1.php on line 230
+[29-Aug-2025 08:36:33 Asia/Ho_Chi_Minh] CURL Error: Connection timed out after 30001 milliseconds (Code: 28)
+[29-Aug-2025 08:36:36 Asia/Ho_Chi_Minh] CURL Error: Connection timed out after 30001 milliseconds (Code: 28)
+[29-Aug-2025 08:37:33 Asia/Ho_Chi_Minh] PHP Warning:  file_get_contents(https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyADE5FGBKr_YlObjQpGahtblufeebS5cgU): Failed to open stream: Connection timed out in /home/banhmich/public_html/translate5.php on line 230
+[29-Aug-2025 08:37:36 Asia/Ho_Chi_Minh] PHP Warning:  file_get_contents(https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDqtbnBtGNh97ylF_RPRxU9I7xXw2rTIDg): Failed to open stream: Connection timed out in /home/banhmich/public_html/translate5.php on line 230
+[29-Aug-2025 08:47:27 Asia/Ho_Chi_Minh] CURL Error: Connection timed out after 30002 milliseconds (Code: 28)
+[29-Aug-2025 08:48:27 Asia/Ho_Chi_Minh] PHP Warning:  file_get_contents(https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyAXjLAdTz_q9b7z2RlJ8Gyx-7NPQzNDKEg): Failed to open stream: Connection timed out in /home/banhmich/public_html/translate5.php on line 230
+[29-Aug-2025 08:48:43 Asia/Ho_Chi_Minh] cURL Error: Connection timed out after 30001 milliseconds | Info: {"url":"https:\/\/generativelanguage.googleapis.com\/v1beta\/models\/gemini-1.5-flash:generateContent?key=AIzaSyDk49UB_el1s1ixJV4j9aS2kfZXl7s0h6w","content_type":null,"http_code":0,"header_size":0,"request_size":0,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":30.001897,"namelookup_time":0.000567,"connect_time":0,"pretransfer_time":0,"size_upload":0,"size_download":0,"speed_download":0,"speed_upload":0,"download_content_length":-1,"upload_content_length":-1,"starttransfer_time":0,"redirect_time":0,"redirect_url":"","primary_ip":"","certinfo":[],"primary_port":-1,"local_ip":"","local_port":-1,"http_version":0,"protocol":2,"ssl_verifyresult":0,"scheme":"https","appconnect_time_us":0,"connect_time_us":0,"namelookup_time_us":567,"pretransfer_time_us":0,"redirect_time_us":0,"starttransfer_time_us":0,"total_time_us":30001897}
+[29-Aug-2025 08:49:15 Asia/Ho_Chi_Minh] cURL Error: Connection timed out after 30002 milliseconds | Info: {"url":"https:\/\/generativelanguage.googleapis.com\/v1beta\/models\/gemini-1.5-flash:generateContent?key=AIzaSyA_l_kFyjQHFpvXn8TQ9eLpHQyKP0lvBJ4","content_type":null,"http_code":0,"header_size":0,"request_size":0,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":30.002401,"namelookup_time":0.000336,"connect_time":0,"pretransfer_time":0,"size_upload":0,"size_download":0,"speed_download":0,"speed_upload":0,"download_content_length":-1,"upload_content_length":-1,"starttransfer_time":0,"redirect_time":0,"redirect_url":"","primary_ip":"","certinfo":[],"primary_port":-1,"local_ip":"","local_port":-1,"http_version":0,"protocol":2,"ssl_verifyresult":0,"scheme":"https","appconnect_time_us":0,"connect_time_us":0,"namelookup_time_us":336,"pretransfer_time_us":0,"redirect_time_us":0,"starttransfer_time_us":0,"total_time_us":30002401}
+[29-Aug-2025 08:56:26 Asia/Ho_Chi_Minh] cURL Error: Connection timed out after 30002 milliseconds | Info: {"url":"https:\/\/generativelanguage.googleapis.com\/v1beta\/models\/gemini-1.5-flash:generateContent?key=AIzaSyDqtbnBtGNh97ylF_RPRxU9I7xXw2rTIDg","content_type":null,"http_code":0,"header_size":0,"request_size":0,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":30.002537,"namelookup_time":0.000589,"connect_time":0,"pretransfer_time":0,"size_upload":0,"size_download":0,"speed_download":0,"speed_upload":0,"download_content_length":-1,"upload_content_length":-1,"starttransfer_time":0,"redirect_time":0,"redirect_url":"","primary_ip":"","certinfo":[],"primary_port":-1,"local_ip":"","local_port":-1,"http_version":0,"protocol":2,"ssl_verifyresult":0,"scheme":"https","appconnect_time_us":0,"connect_time_us":0,"namelookup_time_us":589,"pretransfer_time_us":0,"redirect_time_us":0,"starttransfer_time_us":0,"total_time_us":30002537}
+[29-Aug-2025 08:56:58 Asia/Ho_Chi_Minh] cURL Error: Connection timed out after 30001 milliseconds | Info: {"url":"https:\/\/generativelanguage.googleapis.com\/v1beta\/models\/gemini-1.5-flash:generateContent?key=AIzaSyCJsxjCu6vjyC2c1WviFBX5n2WWeGXn4nM","content_type":null,"http_code":0,"header_size":0,"request_size":0,"filetime":-1,"ssl_verify_result":0,"redirect_count":0,"total_time":30.001666,"namelookup_time":0.000354,"connect_time":0,"pretransfer_time":0,"size_upload":0,"size_download":0,"speed_download":0,"speed_upload":0,"download_content_length":-1,"upload_content_length":-1,"starttransfer_time":0,"redirect_time":0,"redirect_url":"","primary_ip":"","certinfo":[],"primary_port":-1,"local_ip":"","local_port":-1,"http_version":0,"protocol":2,"ssl_verifyresult":0,"scheme":"https","appconnect_time_us":0,"connect_time_us":0,"namelookup_time_us":354,"pretransfer_time_us":0,"redirect_time_us":0,"starttransfer_time_us":0,"total_time_us":30001666}

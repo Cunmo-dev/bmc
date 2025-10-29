@@ -1,0 +1,57 @@
+[
+  {
+    "id": "all",
+    "name": "Tất cả",
+    "icon": "🌟"
+  },
+  {
+    "id": "action",
+    "name": "Hành động",
+    "icon": "💥"
+  },
+  {
+    "id": "sci-fi",
+    "name": "Khoa học viễn tưởng",
+    "icon": "🚀"
+  },
+  {
+    "id": "drama",
+    "name": "Chính kịch",
+    "icon": "🎭"
+  },
+  {
+    "id": "horror",
+    "name": "Kinh dị",
+    "icon": "👻"
+  },
+  {
+    "id": "comedy",
+    "name": "Hài hước",
+    "icon": "😂"
+  },
+  {
+    "id": "romance",
+    "name": "Lãng mạn",
+    "icon": "💕"
+  },
+  {
+    "id": "adventure",
+    "name": "Phiêu lưu",
+    "icon": "🗺️"
+  },
+  {
+    "id": "animation",
+    "name": "Hoạt hình",
+    "icon": "🎨"
+  },
+  {
+    "id": "thriller",
+    "name": "Giật gân",
+    "icon": "🔪"
+  },
+  {
+    "id": "fantasy",
+    "name": "Kỳ ảo",
+    "icon": "🧙"
+  }
+]

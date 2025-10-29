@@ -1,0 +1,66 @@
+{
+    "khoaitaychien": {
+        "image": "image_food/khoaitaychien900x900.png",
+        "productPrice": "30,000₫",
+        "productSku": "DAVKTC1",
+        "productName": "Khoai Tây Chiên",
+        "url": "products/khoaitaychien.html",
+        "productDescription": "Khoai tây chiên là món ăn vặt quen thuộc với lớp vỏ giòn rụm và bên trong mềm bùi. \n\nKhi ăn, từng miếng khoai thơm ngon hòa cùng chút muối hoặc sốt chấm tạo nên hương vị hấp dẫn, khó cưỡng. \n\nĐây là món ăn đơn giản nhưng luôn được yêu thích trong mọi dịp."
+    },
+    "khoaitaylacphomai": {
+        "image": "image_food/khoaitaylacphomai900x900.png",
+        "productPrice": "35,000₫",
+        "productSku": "DAVKT2",
+        "productName": "Khoai Tây Lắc Phô Mai",
+        "url": "products/khoaitaylacphomai.html",
+        "productDescription": "Khoai tây lắc phô mai là một món ăn vặt giòn rụm, thơm béo và đầy lôi cuốn. \n\nNhững miếng khoai tây chiên vàng giòn được lắc đều với lớp phô mai bột, tạo nên hương vị đậm đà và hấp dẫn. Khi thưởng thức, vị béo ngậy của phô mai hòa quyện cùng độ giòn của khoai, mang đến cảm giác thích thú trong từng miếng ăn. \n\nĐây là món ăn đơn giản nhưng luôn có sức hút đặc biệt, khiến ai cũng muốn thưởng thức thêm."
+    },
+    "combo5nemchua": {
+        "image": "image_food/combo5nemchua900x900.png",
+        "productPrice": "25,000₫",
+        "productSku": "DAVNCR1",
+        "productName": "Combo 5 Nem Chua Rán",
+        "url": "products/combo5nemchua.html",
+        "productDescription": "Nem chua rán là một món ăn vặt đường phố với độ dễ nghiện cực cao tại cùng đất Hà Nội. \n\nVới lớp vỏ vàng giòn, bên trong thơm béo, làm mê mẩn biết bao nhiêu tín đồ ẩm thực."
+    },
+    "khoaimonlepho": {
+        "image": "image_food/khoaimonlepho900x900.png",
+        "productPrice": "30,000₫",
+        "productSku": "DAVKMLP1",
+        "productName": "Khoai Môn Lệ Phố",
+        "url": "products/khoaimonlepho.html",
+        "productDescription": "Khoai môn lệ phố được làm từ những nguyên liệu đơn giản và quen thuộc với mọi người như: Khoai môn, khoai lang tím, đậu xanh, bột năng, bột chiên xù, bột mì, trứng gà, gia vị,… \n\nVới độ giòn rùm rụm bên ngoài và vị ngọt bùi bên trong kèm với mùi thơm đặc trưng mà khoai môn lệ phố đã trở thành một món ăn nổi tiếng khó quên trong lòng của người thưởng thức. \n\nĐây là món có nguồn gốc từ Trung Quốc từ lâu đã được du nhập vào nước ta và đã trở thành món ăn đặc sản của Hà Nội."
+    },
+    "bmnuongmuoiot": {
+        "image": "image_food/bmnuongmuoiot900x900.png",
+        "productPrice": "25,000₫",
+        "productSku": "DAVBMN01",
+        "productName": "Bánh Mì Nướng Muối Ớt",
+        "url": "products/bmnuongmuoiot.html",
+        "productDescription": "Bánh mì nướng muối ớt là một món ngon đặc biệt, có thể ăn vặt hoặc ăn vào các bữa chính trong ngày để thay đổi khẩu vị. \n\nBánh mì nướng muối ớt là món ăn vặt có nguồn gốc từ vùng đất An Giang, ban đầu được người dân Khơme chế biến đơn giản bằng cách quét muối ớt lên bánh mì rồi nướng trên bếp than cho nóng giòn, cứ thế lan dần đến Sài Gòn rồi bây giờ đã nổi tiếng khắp cả nước. \n\nTuy nhiên, bánh mì nướng muối ớt ở quán em đã được biến tấu cầu kỳ hơn với các loại nhân và nước xốt ăn kèm."
+    },
+    "bmnuongmatong": {
+        "image": "image_food/bmnuongmatong900x900.png",
+        "productPrice": "25,000₫",
+        "productSku": "DAVBMN02",
+        "productName": "Bánh Mì Nướng Mật Ong",
+        "url": "products/bmnuongmatong.html",
+        "productDescription": "Bánh mì mật ong là sự kết hợp hoàn hảo giữa lớp bánh giòn rụm, sốt mật ong thơm lừng và loạt topping hấp dẫn. \n\nHành phi giòn tan, ruốc bông mềm mại, xúc xích đậm đà, trứng cút béo ngậy, tất cả hòa quyện cùng sốt mayon béo mịn và rau mùi tươi mát. \n\nMỗi miếng cắn mang đến hương vị ngọt, mặn, béo, giòn đầy mê hoặc—khiến bạn ăn một lần là nhớ mãi!"
+    },
+    "bmnuongbotoi": {
+        "image": "image_food/bmnuongbotoi900x900.png",
+        "productPrice": "25,000₫",
+        "productSku": "DAVBMN3",
+        "productName": "Bánh Mì Nướng Bơ Tỏi",
+        "url": "products/bmnuongbotoi.html",
+        "productDescription": "Bánh mì bơ tỏi là một sự bùng nổ hương vị với lớp bánh giòn rụm, thấm đẫm sốt bơ tỏi béo ngậy và thơm lừng. \n\nTopping hấp dẫn với hành phi giòn tan, ruốc mềm mịn, xúc xích đậm đà, bò khô cay cay và sốt mayon béo mịn tạo nên sự hòa quyện hoàn hảo. \n\nCắn một miếng, bạn sẽ cảm nhận được vị giòn, béo, mặn, ngọt tan chảy trong miệng—mê hoặc đến miếng cuối cùng!"
+    },
+    "bmnuongdacbiet": {
+        "image": "image_food/bmnuongdacbiet900x900.png",
+        "productPrice": "39,000₫",
+        "productSku": "DAVBMN4",
+        "productName": "Bánh Mì Nướng Đặc Biệt",
+        "url": "products/bmnuongdacbiet.html",
+        "productDescription": "Bánh mì đặc biệt là sự kết hợp hoàn hảo của độ giòn rụm, béo ngậy và đậm đà. Lớp bánh vàng ươm thấm nước sốt muối ớt cay nhẹ, hòa quyện cùng hành phi thơm lừng, tép sấy giòn tan, ruốc bông mềm mịn. \n\nThêm vào đó là xúc xích đậm đà, trứng cút beo béo, bò khô cay cay, khoai tây giòn bùi và viên chiên hấp dẫn. \n\nTất cả được phủ thêm lớp sốt mayon béo mịn, tương ớt cay nồng và chút rau mùi tươi mát. Mỗi miếng cắn là một trải nghiệm đầy kích thích, khiến bạn khó lòng dừng lại!"
+    }
+}

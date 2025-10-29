@@ -1,0 +1,58 @@
+{
+    "trasamdua": {
+        "image": "image_food/trasamdua900x900.png",
+        "productPrice": "5,000₫",
+        "productSku": "DUTSD1",
+        "productName": "Trà Sâm Dứa",
+        "url": "products/trasamdua.html",
+        "productDescription": "TRÀ SÂM DỨA – HƯƠNG VỊ THANH MÁT CHO MỌI LỨA TUỔI \n\nTrà sâm dứa là một loại trà thảo mộc phổ biến, mang đến hương vị thơm ngon và tác dụng thanh nhiệt, giải độc. \n\nTrà có sự kết hợp hài hòa giữa trà xanh, lá dứa, hoa lài và đôi khi có thêm hoa sen hoặc các loại thảo mộc khác. Khi pha, trà có màu xanh nhẹ, hương thơm dịu, vị chát nhẹ đặc trưng nhưng hậu ngọt thanh, mang lại cảm giác thư giãn.\n\nLoại trà này không chỉ giúp giải khát mà còn có nhiều lợi ích cho sức khỏe. Nhờ vào thành phần tự nhiên, trà sâm dứa hỗ trợ thanh lọc cơ thể, cải thiện tiêu hóa và giúp tinh thần tỉnh táo. \n\nHương thơm của trà từ lá dứa và hoa lài còn giúp giảm căng thẳng, mang lại cảm giác dễ chịu, thư thái."
+    },
+    "traquat": {
+        "image": "image_food/traquat900x900.png",
+        "productPrice": "20,000₫",
+        "productSku": "DAVKT2",
+        "productName": "Trà Quất",
+        "url": "products/traquat.html",
+        "productDescription": "Trà quất tại Bánh mì chảo thương nhớ là sự kết hợp hoàn hảo giữa vị chua nhẹ của quất tươi và độ ngọt thanh của đường, mang đến cảm giác mát lạnh và dễ chịu. \n\nMỗi ngụm trà không chỉ giúp giải nhiệt mà còn thanh lọc cơ thể, rất thích hợp cho những ngày hè oi bức. Hãy ghé qua và thử ngay ly trà quất tuyệt vời này!"
+    },
+    "tradao": {
+        "image": "image_food/tradao900x900.png",
+        "productPrice": "25,000₫",
+        "productSku": "DUTD01",
+        "productName": "Trà Đào",
+        "url": "products/tradao.html",
+        "productDescription": "Trà Đào – Hương Vị Ngọt Thanh, Sảng Khoái \n\nThức uống mang đến sự tươi mát với hương thơm quyến rũ và vị ngọt dịu nhẹ. \n\nMỗi ngụm trà là sự hòa quyện tinh tế, tạo cảm giác thư giãn và sảng khoái, đặc biệt thích hợp để thưởng thức trong những ngày oi bức."
+    },
+    "tradaoxa": {
+        "image": "image_food/tradaoxa900x900.png",
+        "productPrice": "25,000₫",
+        "productSku": "DUTD02",
+        "productName": "Trà Đào Xả",
+        "url": "products/tradaoxa.html",
+        "productDescription": "Trà Đào Sả – Thanh Mát, Thơm Nồng, Sảng Khoái \n\nVị ngọt dịu hòa quyện cùng hương sả thơm nồng, tạo nên một thức uống độc đáo, vừa mát lạnh, vừa ấm áp. \n\nMỗi ngụm trà mang đến cảm giác thư giãn, giúp tinh thần tỉnh táo và đầy năng lượng. Hoàn hảo cho những ai yêu thích hương vị nhẹ nhàng nhưng đầy cuốn hút!"
+    },
+    "mojitovietquat": {
+        "image": "image_food/mojitovietquat900x900.png",
+        "productPrice": "25,000₫",
+        "productSku": "DUMJT01",
+        "productName": "Mojito Việt Quất",
+        "url": "products/mojitovietquat.html",
+        "productDescription": "Mojito Việt Quất là sự kết hợp hoàn hảo giữa hương vị tươi mát của bạc hà và chút ngọt thanh từ việt quất, tạo nên một thức uống vừa sảng khoái vừa hấp dẫn. \n\nLớp đá mát lạnh hòa quyện cùng soda sủi bọt mang đến cảm giác tươi mới ngay từ ngụm đầu tiên. Đặc biệt, việt quất không chỉ góp phần tạo màu sắc bắt mắt mà còn cung cấp nhiều chất chống oxy hóa, tốt cho sức khỏe. \n\nĐây là lựa chọn lý tưởng cho những ai muốn tận hưởng một ly mojito thơm ngon, đầy năng lượng vào những ngày nóng bức."
+    },
+    "mojitotaoxanh": {
+        "image": "image_food/mojitotaoxanh900x900.png",
+        "productPrice": "25,000₫",
+        "productSku": "DUMJT02",
+        "productName": "Mojito Táo Xanh",
+        "url": "products/mojitotaoxanh.html",
+        "productDescription": "Mojito Táo Xanh là sự kết hợp độc đáo giữa vị chua thanh của táo xanh, hương thơm the mát của bạc hà và chút sủi bọt tươi mới từ soda. \n\nSự hòa quyện của các nguyên liệu này mang đến một thức uống sảng khoái, giúp đánh thức vị giác và xua tan cái nóng tức thì. \n\nĐặc biệt, táo xanh không chỉ tạo nên màu sắc đẹp mắt mà còn giàu vitamin, mang lại cảm giác tươi mới và tràn đầy năng lượng. \n\nĐây là lựa chọn hoàn hảo cho những ai yêu thích hương vị tự nhiên, thanh mát và đầy sức sống."
+    },
+    "mojitocamxa": {
+        "image": "image_food/mojitocamxa900x900.png",
+        "productPrice": "25,000₫",
+        "productSku": "DUMJT03",
+        "productName": "Mojito Cam Xả",
+        "url": "products/mojitocamxa.html",
+        "productDescription": "Mojito Cam Sả là sự kết hợp đầy thú vị giữa vị chua ngọt tự nhiên của cam, hương thơm nồng nàn của sả và chút the mát từ bạc hà. \n\nLớp đá mát lạnh cùng soda sủi bọt giúp tăng thêm độ sảng khoái, mang lại cảm giác tươi mới ngay từ ngụm đầu tiên. \n\nKhông chỉ hấp dẫn về hương vị, cam còn giàu vitamin C giúp tăng cường sức đề kháng, trong khi sả có tác dụng thư giãn và thanh lọc cơ thể. \n\nĐây là lựa chọn hoàn hảo cho những ai muốn tận hưởng một thức uống vừa thơm ngon vừa tốt cho sức khỏe."
+    }
+}

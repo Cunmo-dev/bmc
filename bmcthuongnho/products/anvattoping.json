@@ -1,0 +1,82 @@
+{
+    "changasotthai": {
+        "image": "image_food/changasotthai900x900.png",
+        "productPrice": "65,000₫",
+        "productSku": "AVCG01",
+        "productName": "Chân Gà Sốt Thái",
+        "url": "products/changasotthai.html",
+        "productDescription": "Chân gà sốt Thái là món ăn vặt hấp dẫn với sự kết hợp hoàn hảo giữa chân gà giòn dai và nước sốt Thái chua cay đậm đà. \n\nChân gà được luộc vừa chín tới, sau đó ngâm cùng nước sốt đặc trưng làm từ chanh, tắc, ớt, sả và các gia vị đặc biệt, giúp thấm đều hương vị chua cay mặn ngọt đầy kích thích. \n\nMón ăn này không chỉ ngon miệng mà còn rất thích hợp để nhâm nhi cùng bạn bè, đặc biệt là khi thưởng thức cùng một ly nước mát lạnh. \n\nChân gà sốt Thái chắc chắn sẽ là món khoái khẩu cho những tín đồ mê đồ ăn cay và thích trải nghiệm hương vị đậm chất đường phố."
+    },
+    "xoaidamsotthai": {
+        "image": "image_food/xoaidamsotthai900x900.png",
+        "productPrice": "30,000₫",
+        "productSku": "AVXD01",
+        "productName": "Xoài Dầm Sốt Thái",
+        "url": "products/xoaidamsotthai.html",
+        "productDescription": "Xoài dầm sốt Thái là món ăn vặt hấp dẫn với sự kết hợp hoàn hảo giữa xoài xanh giòn rụm và nước sốt Thái chua cay đậm đà. \n\nKhi ăn, xoài vẫn giữ được độ giòn, hòa quyện cùng vị đậm đà của sốt, khiến ai cũng phải xuýt xoa thích thú. \n\nĐây là món ăn lý tưởng cho những tín đồ mê đồ chua cay, thích nhâm nhi những hương vị đường phố độc đáo."
+    },
+    "changaxatac": {
+        "image": "image_food/changaxatac900x900.png",
+        "productPrice": "65,000₫",
+        "productSku": "AVCG02",
+        "productName": "Chân Gà Xả Tắc",
+        "url": "products/changaxatac.html",
+        "productDescription": "Chân gà sả tắc là món ăn vặt được nhiều người yêu thích bởi hương vị chua ngọt hài hòa cùng độ giòn sần sật đầy kích thích. \n\nChân gà được luộc chín tới, sau đó ngâm trong hỗn hợp nước mắm pha cùng tắc, đường, sả và ớt tươi, giúp thấm đều vị chua cay mặn ngọt đặc trưng. \n\nSả thái lát mang lại hương thơm dịu nhẹ, trong khi những lát tắc tươi tạo thêm vị thanh mát, giúp món ăn trở nên hấp dẫn hơn. Món này không chỉ ngon miệng mà còn rất thích hợp để nhâm nhi cùng bạn bè, đặc biệt khi kết hợp với một ly nước mát lạnh."
+    },
+    "topping_khoai_vien_cha": {
+        "image": "image_food/topping_khoai_vien_cha900x900.png",
+        "productPrice": "10,000₫",
+        "productSku": "TPKVC",
+        "productName": "Topping Khoai Viên Chả",
+        "url": "products/topping_khoai_vien_cha.html",
+        "productDescription": "Topping dành cho các món bánh mì chảo"
+    },
+    "topping_pate": {
+        "image": "image_food/topping_pate900x900.png",
+        "productPrice": "8,000₫",
+        "productSku": "TPPT1",
+        "productName": "Pate",
+        "url": "products/topping_pate.html",
+        "productDescription": "Topping dành cho các món bánh mì chảo - GIÁ 8K/1 miếng"
+    },
+    "topping_thitbogion": {
+        "image": "image_food/topping_thitbogion900x900.png",
+        "productPrice": "15,000₫",
+        "productSku": "TPTBG1",
+        "productName": "Thịt Bò Giòn",
+        "url": "products/topping_thitbogion.html",
+        "productDescription": "Topping dành cho các món bánh mì chảo"
+    },
+    "topping_trung": {
+        "image": "image_food/topping_trung900x900.png",
+        "productPrice": "5,000₫",
+        "productSku": "TPTG1",
+        "productName": "Trứng",
+        "url": "products/topping_trung.html",
+        "productDescription": "Topping dành cho các món bánh mì chảo - GIÁ 5K/1quả"
+    },
+    "topping_xiumai": {
+        "image": "image_food/topping_xiumai900x900.png",
+        "productPrice": "10,000₫",
+        "productSku": "TPXM1",
+        "productName": "Xíu Mại",
+        "url": "products/topping_xiumai.html",
+        "productDescription": "Topping dành cho các món bánh mì chảo - 10K/3V"
+    },
+    "topping_xucxich": {
+        "image": "image_food/topping_xucxich900x900.png",
+        "productPrice": "10,000₫",
+        "productSku": "TPXX1",
+        "productName": "Xúc Xích",
+        "url": "products/topping_xucxich.html",
+        "productDescription": "Topping dành cho các món bánh mì chảo - GIÁ 10K/1 cái"
+    },
+    "banhmiankem": {
+        "image": "image_food/banhmiankem900x900.png",
+        "productPrice": "5,000₫",
+        "productSku": "TPBM1",
+        "productName": "Bánh Mì Ăn Kèm",
+        "url": "products/banhmiankem.html",
+        "productDescription": "Topping dành cho các món bánh mì chảo - GIÁ 5K/1 cái"
+    }
+}

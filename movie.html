@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineVerse - Khám Phá Thế Giới Điện Ảnh</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: linear-gradient(45deg, #0a0a0a, #1a0a1a, #0a1a1a);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 80px;
+            width: 280px;
+            height: calc(100vh - 80px);
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 20px;
+            overflow-y: auto;
+            z-index: 100;
+            transition: all 0.3s;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sidebar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background: rgba(102, 126, 234, 0.5);
+            border-radius: 3px;
+        }
+
+        .sidebar-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #667eea;
+            font-weight: bold;
+            padding-left: 10px;
+        }
+
+        .genre-list {
+            list-style: none;
+        }
+
+        .genre-item {
+            margin-bottom: 5px;
+        }
+
+        .genre-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            color: #aaa;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+            font-size: 15px;
+        }
+
+        .genre-link:hover,
+        .genre-link.active {
+            background: rgba(102, 126, 234, 0.2);
+            color: #fff;
+            transform: translateX(5px);
+        }
+
+        .genre-icon {
+            font-size: 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            margin-left: 280px;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 24px;
+            color: #aaa;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s;
+            animation: fadeInUp 1s ease 0.4s both;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Movie Grid */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            margin-left: 280px;
+            padding: 80px 40px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 50px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .movie-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.5s;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .movie-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4);
+        }
+
+        .movie-card.hidden {
+            display: none;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(102, 126, 234, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        .movie-card:hover .play-button {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .movie-poster::before {
+            content: '🎬';
+            position: absolute;
+            font-size: 120px;
+            opacity: 0.1;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .movie-info {
+            padding: 25px;
+        }
+
+        .movie-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .movie-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #ffd700;
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .feature-desc {
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: rgba(10, 10, 10, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 80px;
+        }
+
+        footer p {
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <header>
+        <nav>
+            <div class="logo">🎬 CineVerse</div>
+            <ul class="nav-links">
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#movies">Phim</a></li>
+                <li><a href="#trending">Thịnh hành</a></li>
+                <li><a href="#about">Về chúng tôi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar">
+        <h3 class="sidebar-title">🎭 Thể Loại Phim</h3>
+        <ul class="genre-list">
+            <li class="genre-item">
+                <a href="#" class="genre-link active" data-genre="all">
+                    <span class="genre-icon">🌟</span>
+                    <span>Tất cả</span>
+                </a>
+            </li>
+            <li class="genre-item">
+                <a href="#" class="genre-link" data-genre="action">
+                    <span class="genre-icon">💥</span>
+                    <span>Hành động</span>
+                </a>
+            </li>
+            <li class="genre-item">
+                <a href="#" class="genre-link" data-genre="sci-fi">
+                    <span class="genre-icon">🚀</span>
+                    <span>Khoa học viễn tưởng</span>
+                </a>
+            </li>
+            <li class="genre-item">
+                <a href="#" class="genre-link" data-genre="drama">
+                    <span class="genre-icon">🎭</span>
+                    <span>Chính kịch</span>
+                </a>
+            </li>
+            <li class="genre-item">
+                <a href="#" class="genre-link" data-genre="horror">
+                    <span class="genre-icon">👻</span>
+                    <span>Kinh dị</span>
+                </a>
+            </li>
+            <li class="genre-item">
+                <a href="#" class="genre-link" data-genre="comedy">
+                    <span class="genre-icon">😂</span>
+                    <span>Hài hước</span>
+                </a>
+            </li>
+            <li class="genre-item">
+                <a href="#" class="genre-link" data-genre="romance">
+                    <span class="genre-icon">💕</span>
+                    <span>Lãng mạn</span>
+                </a>
+            </li>
+            <li class="genre-item">
+                <a href="#" class="genre-link" data-genre="adventure">
+                    <span class="genre-icon">🗺️</span>
+                    <span>Phiêu lưu</span>
+                </a>
+            </li>
+            <li class="genre-item">
+                <a href="#" class="genre-link" data-genre="animation">
+                    <span class="genre-icon">🎨</span>
+                    <span>Hoạt hình</span>
+                </a>
+            </li>
+            <li class="genre-item">
+                <a href="#" class="genre-link" data-genre="thriller">
+                    <span class="genre-icon">🔪</span>
+                    <span>Giật gân</span>
+                </a>
+            </li>
+            <li class="genre-item">
+                <a href="#" class="genre-link" data-genre="fantasy">
+                    <span class="genre-icon">🧙</span>
+                    <span>Kỳ ảo</span>
+                </a>
+            </li>
+            <li class="genre-item">
+                <a href="#" class="genre-link" data-genre="mystery">
+                    <span class="genre-icon">🔍</span>
+                    <span>Bí ẩn</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Khám Phá Điện Ảnh</h1>
+            <p>Trải nghiệm hàng ngàn bộ phim đỉnh cao từ khắp nơi trên thế giới</p>
+            <a href="#movies" class="cta-button">Khám phá ngay</a>
+        </div>
+    </section>
+
+    <div class="container" id="movies">
+        <h2 class="section-title">🔥 Phim Hot Nhất</h2>
+        <div class="movie-grid">
+            <div class="movie-card" data-genre="action">
+                <div class="movie-poster">🌟</div>
+                <div class="play-button">▶</div>
+                <div class="movie-info">
+                    <h3 class="movie-title">The Last Guardian</h3>
+                    <div class="movie-meta">
+                        <span>2024 • Hành động</span>
+                        <div class="rating">
+                            <span>⭐</span>
+                            <span>8.9</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-genre="sci-fi">
+                <div class="movie-poster">🎭</div>
+                <div class="play-button">▶</div>
+                <div class="movie-info">
+                    <h3 class="movie-title">Echoes of Tomorrow</h3>
+                    <div class="movie-meta">
+                        <span>2024 • Khoa học viễn tưởng</span>
+                        <div class="rating">
+                            <span>⭐</span>
+                            <span>9.2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-genre="drama">
+                <div class="movie-poster">💫</div>
+                <div class="play-button">▶</div>
+                <div class="movie-info">
+                    <h3 class="movie-title">Midnight Dreams</h3>
+                    <div class="movie-meta">
+                        <span>2024 • Chính kịch</span>
+                        <div class="rating">
+                            <span>⭐</span>
+                            <span>8.7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-genre="adventure">
+                <div class="movie-poster">🚀</div>
+                <div class="play-button">▶</div>
+                <div class="movie-info">
+                    <h3 class="movie-title">Cosmic Journey</h3>
+                    <div class="movie-meta">
+                        <span>2025 • Phiêu lưu</span>
+                        <div class="rating">
+                            <span>⭐</span>
+                            <span>9.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-genre="drama">
+                <div class="movie-poster">🎪</div>
+                <div class="play-button">▶</div>
+                <div class="movie-info">
+                    <h3 class="movie-title">The Silent Stage</h3>
+                    <div class="movie-meta">
+                        <span>2024 • Chính kịch</span>
+                        <div class="rating">
+                            <span>⭐</span>
+                            <span>8.5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-genre="mystery">
+                <div class="movie-poster">🌊</div>
+                <div class="play-button">▶</div>
+                <div class="movie-info">
+                    <h3 class="movie-title">Ocean's Whisper</h3>
+                    <div class="movie-meta">
+                        <span>2024 • Bí ẩn</span>
+                        <div class="rating">
+                            <span>⭐</span>
+                            <span>8.8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-genre="horror">
+                <div class="movie-poster">👻</div>
+                <div class="play-button">▶</div>
+                <div class="movie-info">
+                    <h3 class="movie-title">Dark Shadows</h3>
+                    <div class="movie-meta">
+                        <span>2024 • Kinh dị</span>
+                        <div class="rating">
+                            <span>⭐</span>
+                            <span>8.3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-genre="comedy">
+                <div class="movie-poster">😂</div>
+                <div class="play-button">▶</div>
+                <div class="movie-info">
+                    <h3 class="movie-title">Laugh Out Loud</h3>
+                    <div class="movie-meta">
+                        <span>2024 • Hài hước</span>
+                        <div class="rating">
+                            <span>⭐</span>
+                            <span>8.6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-genre="romance">
+                <div class="movie-poster">💕</div>
+                <div class="play-button">▶</div>
+                <div class="movie-info">
+                    <h3 class="movie-title">Love in Paris</h3>
+                    <div class="movie-meta">
+                        <span>2024 • Lãng mạn</span>
+                        <div class="rating">
+                            <span>⭐</span>
+                            <span>8.4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-genre="animation">
+                <div class="movie-poster">🎨</div>
+                <div class="play-button">▶</div>
+                <div class="movie-info">
+                    <h3 class="movie-title">Pixel Adventures</h3>
+                    <div class="movie-meta">
+                        <span>2025 • Hoạt hình</span>
+                        <div class="rating">
+                            <span>⭐</span>
+                            <span>9.1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-genre="thriller">
+                <div class="movie-poster">🔪</div>
+                <div class="play-button">▶</div>
+                <div class="movie-info">
+                    <h3 class="movie-title">Edge of Danger</h3>
+                    <div class="movie-meta">
+                        <span>2024 • Giật gân</span>
+                        <div class="rating">
+                            <span>⭐</span>
+                            <span>8.7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-genre="fantasy">
+                <div class="movie-poster">🧙</div>
+                <div class="play-button">▶</div>
+                <div class="movie-info">
+                    <h3 class="movie-title">Realm of Magic</h3>
+                    <div class="movie-meta">
+                        <span>2024 • Kỳ ảo</span>
+                        <div class="rating">
+                            <span>⭐</span>
+                            <span>8.9</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-genre="action">
+                <div class="movie-poster">💥</div>
+                <div class="play-button">▶</div>
+                <div class="movie-info">
+                    <h3 class="movie-title">Final Strike</h3>
+                    <div class="movie-meta">
+                        <span>2025 • Hành động</span>
+                        <div class="rating">
+                            <span>⭐</span>
+                            <span>9.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-genre="sci-fi">
+                <div class="movie-poster">🌌</div>
+                <div class="play-button">▶</div>
+                <div class="movie-info">
+                    <h3 class="movie-title">Beyond the Stars</h3>
+                    <div class="movie-meta">
+                        <span>2024 • Khoa học viễn tưởng</span>
+                        <div class="rating">
+                            <span>⭐</span>
+                            <span>8.8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card" data-genre="adventure">
+                <div class="movie-poster">🗺️</div>
+                <div class="play-button">▶</div>
+                <div class="movie-info">
+                    <h3 class="movie-title">Lost Treasure</h3>
+                    <div class="movie-meta">
+                        <span>2024 • Phiêu lưu</span>
+                        <div class="rating">
+                            <span>⭐</span>
+                            <span>8.5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title" id="about">✨ Tính Năng Nổi Bật</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📺</div>
+                <h3 class="feature-title">Chất Lượng 4K</h3>
+                <p class="feature-desc">Trải nghiệm phim ảnh với chất lượng hình ảnh sắc nét đến từng chi tiết</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3 class="feature-title">Nội Dung Đa Dạng</h3>
+                <p class="feature-desc">Hàng nghìn bộ phim từ nhiều quốc gia và thể loại khác nhau</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Tải Nhanh</h3>
+                <p class="feature-desc">Công nghệ streaming tiên tiến, không buffering, không chờ đợi</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CineVerse. Trải nghiệm điện ảnh đẳng cấp thế giới.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
+            } else {
+                header.style.background = 'rgba(10, 10, 10, 0.8)';
+            }
+        });
+
+        // Genre filter
+        document.querySelectorAll('.genre-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Update active state
+                document.querySelectorAll('.genre-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                
+                const genre = this.dataset.genre;
+                const genreName = this.textContent.trim();
+                
+                // Filter movies
+                const movieCards = document.querySelectorAll('.movie-card');
+                movieCards.forEach(card => {
+                    if (genre === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        if (card.dataset.genre === genre) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    }
+                });
+                
+                // Update section title
+                const sectionTitle = document.querySelector('.section-title');
+                if (genre === 'all') {
+                    sectionTitle.textContent = '🔥 Phim Hot Nhất';
+                } else {
+                    sectionTitle.textContent = `${this.querySelector('.genre-icon').textContent} Phim ${genreName}`;
+                }
+                
+                // Scroll to movies section
+                document.querySelector('#movies').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Movie card click effect - opens new page
+        document.querySelectorAll('.movie-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const title = this.querySelector('.movie-title').textContent;
+                // Simulate opening movie page (in real app, this would navigate to movie detail page)
+                const movieUrl = `movie-detail.html?title=${encodeURIComponent(title)}`;
+                alert(`Đang chuyển đến trang xem phim: ${title}\n\nURL: ${movieUrl}\n\n(Trong ứng dụng thật, sẽ chuyển trang đến trang xem phim)`);
+                // window.location.href = movieUrl; // Uncomment this in real app
+            });
+        });
+    </script>
+</body>
+</html>

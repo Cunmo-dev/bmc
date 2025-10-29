@@ -1,0 +1,58 @@
+{
+    "banhtrangcuon": {
+        "image": "image_food/banhtrangcuon900x900.png",
+        "productPrice": "25,000₫",
+        "productSku": "DAVBTC1",
+        "productName": "Bánh Tráng Cuộn",
+        "url": "products/banhtrangcuon.html",
+        "productDescription": "Bánh Tráng Cuộn – Món Ăn Vặt Ngon Khó Cưỡng \n\nBánh tráng cuộn là một món ăn vặt quen thuộc nhưng luôn có sức hút đặc biệt. Từng cuộn bánh mềm dai, hòa quyện cùng nước sốt đậm đà, mang đến hương vị thơm ngon, chua cay hài hòa, kích thích vị giác ngay từ miếng đầu tiên. \n\nSự kết hợp giữa vị bùi, béo, giòn và thơm tạo nên trải nghiệm ăn vặt thú vị, khiến ai đã thử một lần đều muốn quay lại. \n\nMột lựa chọn tuyệt vời cho những buổi trò chuyện cùng bạn bè!"
+    },
+    "banhtrangtron": {
+        "image": "image_food/banhtrangtron900x900.png",
+        "productPrice": "25,000₫",
+        "productSku": "DAVBTT1",
+        "productName": "Bánh Tráng Trộn",
+        "url": "products/banhtrangtron.html",
+        "productDescription": "Bánh tráng trộn tại Bánh Mì Chảo Thương Nhớ mang đến hương vị hài hòa, kết hợp giữa vị chua nhẹ, cay cay và chút béo bùi hấp dẫn. \n\nTừng sợi bánh mềm dai, quyện cùng nước sốt đậm đà, tạo nên một món ăn vặt không thể chối từ. \n\nHương thơm đặc trưng cùng độ giòn của các thành phần đi kèm khiến mỗi miếng bánh thêm phần thú vị."
+    },
+    "banhtrnagtrontrung": {
+        "image": "image_food/banhtrangtrontrung900x900.png",
+        "productPrice": "30,000₫",
+        "productSku": "DAVBTT2",
+        "productName": "Bánh Tráng Trộn Trứng",
+        "url": "products/banhtrnagtrontrung.html",
+        "productDescription": "Bánh tráng trộn trứng tại Bánh Mì Chảo Thương Nhớ mang đến hương vị hài hòa, kết hợp giữa vị chua nhẹ, cay cay và chút béo bùi hấp dẫn. \n\nTừng sợi bánh mềm dai, quyện cùng nước sốt đậm đà, tạo nên một món ăn vặt không thể chối từ. \n\nHương thơm đặc trưng cùng độ giòn của các thành phần đi kèm khiến mỗi miếng bánh thêm phần thú vị."
+    },
+    "banhtrangnuong": {
+        "image": "image_food/banhtrangnuong900x900.png",
+        "productPrice": "25,000₫",
+        "productSku": "DAVBTT2",
+        "productName": "Bánh Tráng Nướng",
+        "url": "products/banhtrangnuong.html",
+        "productDescription": "Bạn đã bao giờ thử một chiếc bánh tráng nướng giòn tan, thơm phức, nóng hổi vừa thổi vừa ăn chưa? \n\nTại Bánh Mì Chảo Thương Nhớ, mỗi chiếc bánh tráng nướng là một tác phẩm hoàn hảo với lớp vỏ vàng ươm, giòn rụm, bao bọc bên trong là sự kết hợp hài hòa của những nguyên liệu đậm đà. \n\nCắn một miếng, bạn sẽ cảm nhận ngay vị béo bùi, thơm lừng, hòa quyện với chút mặn mặn, ngọt ngọt, cay cay kích thích vị giác. \n\nĐừng ngạc nhiên nếu chỉ sau một lần thử, bạn lại muốn gọi thêm một chiếc nữa!"
+    },
+    "trungcutlonxaome": {
+        "image": "image_food/trungcutlonxaome900x900.png",
+        "productPrice": "32,000₫",
+        "productSku": "DAVCLXM1",
+        "productName": "Trứng Cút Lộn Xào Me",
+        "url": "products/trungcutlonxaome.html",
+        "productDescription": "Từng quả trứng cút lộn béo bùi, mềm mịn được áo đều trong sốt me chua chua ngọt ngọt, quyện thêm chút cay nhẹ nơi đầu lưỡi, tạo nên một hương vị cực kỳ lôi cuốn. \n\nNước sốt sánh mịn, đậm đà, thêm chút hành phi thơm lừng và rau răm tươi mát, tất cả cùng hòa quyện, khiến bạn chỉ muốn gắp thêm miếng nữa. \n\nMón này mà chấm cùng bánh mì nóng giòn hay húp chút nước sốt đậm đà thì đúng là hết sẩy! Nhớ thử ngay để không bỏ lỡ hương vị gây nghiện này nhé!"
+    },
+    "trungcutlac": {
+        "image": "image_food/trungcutlac900x900.png",
+        "productPrice": "30,000₫",
+        "productSku": "DAVCL1",
+        "productName": "Trứng Cút Lắc",
+        "url": "products/trungcutlac.html",
+        "productDescription": "Trứng cút lắc là một món ăn vặt độc đáo với sự kết hợp hài hòa giữa vị béo bùi của trứng cút, vị giòn rụm của các topping đi kèm và độ sánh mịn của lớp sốt rưới bên trên. \n\nMón ăn được chế biến bằng cách lắc đều các nguyên liệu để gia vị thấm đều, tạo nên một hương vị đậm đà và cuốn hút. \n\n Khi thưởng thức, bạn sẽ cảm nhận được sự bùng nổ của nhiều tầng hương vị khác nhau: vị béo ngậy chua cay hòa quyện cùng vị giòn thơm, kết hợp với lớp sốt mịn màng tạo nên một tổng thể hấp dẫn."
+    },
+    "trungcutchienchabongphomai": {
+        "image": "image_food/trungcutchienchabongphomai900x900.png",
+        "productPrice": "30,000₫",
+        "productSku": "DAVCL1",
+        "productName": "Trứng Cút Chiên Chà Bông Phô Mai",
+        "url": "products/trungcutchienchabongphomai.html",
+        "productDescription": "Trứng cút chiên chà bông phô mai là một món ăn vặt hấp dẫn với lớp trứng cút vàng giòn, phủ bên trên là lớp phô mai bột mịn màng hòa quyện cùng chà bông mặn mà. \n\nKhi thưởng thức, vị béo ngậy của phô mai kết hợp với độ giòn của trứng và hương thơm đặc trưng của chà bông tạo nên một tổng thể hài hòa, kích thích vị giác. \n\nLớp sốt mayonnaise rưới nhẹ giúp cân bằng hương vị, khiến mỗi miếng ăn trở nên tròn trịa và lôi cuốn hơn. \n\nĐây là món ăn không chỉ bắt mắt mà còn đầy sức hút, phù hợp để thưởng thức mọi lúc mọi nơi."
+    }
+}

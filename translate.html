@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thai-Vietnamese Translator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="translate.js" type="text/javascript"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .translator-section {
+            padding: 40px;
+        }
+
+        .language-selector {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+
+        .language-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 25px;
+            background: #f8f9fa;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            font-weight: 500;
+        }
+
+        .language-option.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .language-option:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .swap-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .swap-btn:hover {
+            transform: rotate(180deg) scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+        }
+
+        .translation-area {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .input-section,
+        .output-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .input-section:focus-within {
+            border-color: #667eea;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-weight: 600;
+            color: #495057;
+            font-size: 1rem;
+        }
+
+        .char-count {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        .input-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .voice-btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .voice-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+        }
+
+        .voice-btn.recording {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            animation: pulse 1.5s infinite;
+        }
+
+        .voice-btn.processing {
+            background: linear-gradient(135deg, #ffc107, #fd7e14);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(220, 53, 69, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+            }
+        }
+
+        .voice-status {
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #343a40;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .voice-status.show {
+            opacity: 1;
+        }
+
+        .voice-status::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: #343a40;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            border: none;
+            background: transparent;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            resize: vertical;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .input-text {
+            color: #343a40;
+        }
+
+        .output-text {
+            color: #495057;
+            background: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            min-height: 200px;
+            border: 1px solid #dee2e6;
+        }
+
+        .loading {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #667eea;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #495057;
+            border: 2px solid #dee2e6;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #495057;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #28a745;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast.error {
+            background: #dc3545;
+        }
+
+        .voice-warning {
+            background: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ffc107;
+            display: none;
+        }
+
+        .voice-warning.show {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .translation-area {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .language-selector {
+                flex-direction: column;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .translator-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-language"></i> Thai-Vietnamese Translator</h1>
+            <p>Dịch thuật chính xác giữa Tiếng Thái và Tiếng Việt với hỗ trợ nhập giọng nói</p>
+        </div>
+
+        <div class="translator-section">
+            <div class="voice-warning" id="voice-warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                Trình duyệt của bạn không hỗ trợ nhận dạng giọng nói hoặc cần cấp quyền truy cập microphone.
+            </div>
+
+            <div class="language-selector">
+                <div class="language-option active" id="thai-option" data-lang="thai">
+                    <i class="fas fa-flag"></i>
+                    <span>ภาษาไทย (Thai)</span>
+                </div>
+
+                <button class="swap-btn" id="swap-btn" title="Hoán đổi ngôn ngữ">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
+
+                <div class="language-option" id="vietnamese-option" data-lang="vietnamese">
+                    <i class="fas fa-flag"></i>
+                    <span>Tiếng Việt (Vietnamese)</span>
+                </div>
+            </div>
+
+            <div class="translation-area">
+                <div class="input-section">
+                    <div class="section-header">
+                        <span class="section-title" id="input-title">Nhập văn bản Tiếng Thái</span>
+                        <span class="char-count" id="char-count">0/5000</span>
+                    </div>
+
+                    <div class="input-controls">
+                        <button class="voice-btn" id="voice-btn" title="Nhấn để nói">
+                            <i class="fas fa-microphone"></i>
+                            <div class="voice-status" id="voice-status">Nhấn để nói</div>
+                        </button>
+                    </div>
+
+                    <textarea id="input-text" class="input-text"
+                        placeholder="พิมพ์ข้อความที่คุณต้องการแปลที่นี่... hoặc nhấn mic để nói"
+                        maxlength="5000"></textarea>
+                </div>
+
+                <div class="output-section">
+                    <div class="section-header">
+                        <span class="section-title" id="output-title">Bản dịch Tiếng Việt</span>
+                        <button class="copy-btn" id="copy-btn" title="Sao chép">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="output-text" id="output-text">
+                        <div class="loading" id="loading">
+                            <div class="spinner"></div>
+                            <div>Đang dịch...</div>
+                        </div>
+                        <div id="translation-result">Bản dịch sẽ xuất hiện ở đây...</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-primary" id="translate-btn">
+                    <i class="fas fa-language"></i>
+                    Dịch ngay
+                </button>
+                <button class="btn btn-secondary" id="clear-btn">
+                    <i class="fas fa-eraser"></i>
+                    Xóa tất cả
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message">Đã sao chép vào clipboard!</span>
+    </div>
+
+    <!-- <script>
+        class ThaiVietnameseTranslator {
+            constructor() {
+                this.initElements();
+                this.initEventListeners();
+                this.initSpeechRecognition();
+                this.currentDirection = 'thai-to-vietnamese';
+                this.isRecording = false;
+            }
+
+            initElements() {
+                this.inputText = document.getElementById('input-text');
+                this.outputText = document.getElementById('translation-result');
+                this.translateBtn = document.getElementById('translate-btn');
+                this.clearBtn = document.getElementById('clear-btn');
+                this.swapBtn = document.getElementById('swap-btn');
+                this.copyBtn = document.getElementById('copy-btn');
+                this.charCount = document.getElementById('char-count');
+                this.thaiOption = document.getElementById('thai-option');
+                this.vietnameseOption = document.getElementById('vietnamese-option');
+                this.inputTitle = document.getElementById('input-title');
+                this.outputTitle = document.getElementById('output-title');
+                this.loading = document.getElementById('loading');
+                this.toast = document.getElementById('toast');
+                this.toastMessage = document.getElementById('toast-message');
+                this.voiceBtn = document.getElementById('voice-btn');
+                this.voiceStatus = document.getElementById('voice-status');
+                this.voiceWarning = document.getElementById('voice-warning');
+            }
+
+            initSpeechRecognition() {
+                // Kiểm tra hỗ trợ Web Speech API
+                if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+                    this.voiceWarning.classList.add('show');
+                    this.voiceBtn.disabled = true;
+                    this.voiceBtn.style.opacity = '0.5';
+                    return;
+                }
+
+                // Khởi tạo Speech Recognition
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                this.recognition = new SpeechRecognition();
+
+                // Cấu hình
+                this.recognition.continuous = false;  // Không liên tục
+                this.recognition.interimResults = true;  // Hiển thị kết quả tạm thời
+                this.recognition.maxAlternatives = 1;
+
+                // Biến để theo dõi trạng thái
+                this.lastProcessedResultIndex = 0;
+
+                // Xử lý kết quả
+                this.recognition.onresult = (event) => {
+                    let finalTranscript = '';
+                    let interimTranscript = '';
+
+                    for (let i = event.resultIndex; i < event.results.length; i++) {
+                        const transcript = event.results[i][0].transcript;
+                        if (event.results[i].isFinal) {
+                            finalTranscript += transcript;
+                        } else {
+                            interimTranscript += transcript;
+                        }
+                    }
+
+                    // Chỉ thêm kết quả cuối cùng vào textarea
+                    if (finalTranscript) {
+                        // Lưu vị trí con trở hiện tại
+                        const cursorPos = this.inputText.selectionStart;
+
+                        // Thêm kết quả cuối cùng vào vị trí con trỏ
+                        const currentValue = this.inputText.value;
+                        const beforeCursor = currentValue.substring(0, cursorPos);
+                        const afterCursor = currentValue.substring(cursorPos);
+
+                        this.inputText.value = beforeCursor + finalTranscript + afterCursor;
+
+                        // Đặt lại vị trí con trỏ
+                        const newCursorPos = cursorPos + finalTranscript.length;
+                        this.inputText.setSelectionRange(newCursorPos, newCursorPos);
+
+                        this.updateCharCount();
+                        this.autoTranslate();
+                    }
+
+                    // Cập nhật trạng thái hiển thị tạm thời (không lưu vào textarea)
+                    if (interimTranscript) {
+                        this.updateVoiceStatus(`Đang nghe: "${interimTranscript}"`, true);
+                    }
+                };
+
+                // Xử lý lỗi
+                this.recognition.onerror = (event) => {
+                    console.error('Speech recognition error:', event.error);
+                    this.stopRecording();
+
+                    let errorMessage = 'Lỗi nhận dạng giọng nói';
+                    switch (event.error) {
+                        case 'no-speech':
+                            errorMessage = 'Không nhận được giọng nói';
+                            break;
+                        case 'audio-capture':
+                            errorMessage = 'Không thể truy cập microphone';
+                            break;
+                        case 'not-allowed':
+                            errorMessage = 'Quyền truy cập microphone bị từ chối';
+                            break;
+                        case 'network':
+                            errorMessage = 'Lỗi kết nối mạng';
+                            break;
+                    }
+
+                    this.showToast(errorMessage, 'error');
+                };
+
+                // Xử lý khi kết thúc
+                this.recognition.onend = () => {
+                    this.stopRecording();
+                };
+
+                // Xử lý khi bắt đầu
+                this.recognition.onstart = () => {
+                    this.updateVoiceStatus('Đang nghe...', true);
+                    this.lastProcessedResultIndex = 0;  // Reset chỉ số
+                };
+            }
+
+            initEventListeners() {
+                this.inputText.addEventListener('input', () => {
+                    this.updateCharCount();
+                    this.autoTranslate();
+                });
+
+                this.translateBtn.addEventListener('click', () => {
+                    this.translateText();
+                });
+
+                this.clearBtn.addEventListener('click', () => {
+                    this.clearAll();
+                });
+
+                this.swapBtn.addEventListener('click', () => {
+                    this.swapLanguages();
+                });
+
+                this.copyBtn.addEventListener('click', () => {
+                    this.copyToClipboard();
+                });
+
+                this.thaiOption.addEventListener('click', () => {
+                    this.setDirection('thai-to-vietnamese');
+                });
+
+                this.vietnameseOption.addEventListener('click', () => {
+                    this.setDirection('vietnamese-to-thai');
+                });
+
+                this.voiceBtn.addEventListener('click', () => {
+                    this.toggleRecording();
+                });
+
+                // Enter key for translation
+                this.inputText.addEventListener('keydown', (e) => {
+                    if (e.ctrlKey && e.key === 'Enter') {
+                        this.translateText();
+                    }
+                });
+
+                // Space key for voice recording
+                document.addEventListener('keydown', (e) => {
+                    if (e.code === 'Space' && e.ctrlKey && !this.isRecording) {
+                        e.preventDefault();
+                        this.startRecording();
+                    }
+                });
+
+                document.addEventListener('keyup', (e) => {
+                    if (e.code === 'Space' && e.ctrlKey && this.isRecording) {
+                        e.preventDefault();
+                        this.stopRecording();
+                    }
+                });
+            }
+
+            toggleRecording() {
+                if (this.isRecording) {
+                    this.stopRecording();
+                } else {
+                    this.startRecording();
+                }
+            }
+
+            startRecording() {
+                if (!this.recognition) {
+                    this.showToast('Trình duyệt không hỗ trợ nhận dạng giọng nói', 'error');
+                    return;
+                }
+
+                try {
+                    // Set language based on current direction
+                    if (this.currentDirection === 'thai-to-vietnamese') {
+                        this.recognition.lang = 'th-TH';
+                    } else {
+                        this.recognition.lang = 'vi-VN';
+                    }
+
+                    // Reset chỉ số trước khi bắt đầu
+                    this.lastProcessedResultIndex = 0;
+
+                    this.recognition.start();
+                    this.isRecording = true;
+                    this.voiceBtn.classList.add('recording');
+                    this.voiceBtn.innerHTML = '<i class="fas fa-stop"></i>';
+
+                } catch (error) {
+                    console.error('Error starting recognition:', error);
+                    this.showToast('Không thể khởi động nhận dạng giọng nói', 'error');
+                }
+            }
+
+            stopRecording() {
+                if (this.recognition && this.isRecording) {
+                    this.recognition.stop();
+                }
+
+                this.isRecording = false;
+                this.voiceBtn.classList.remove('recording', 'processing');
+                this.voiceBtn.innerHTML = '<i class="fas fa-microphone"></i>';
+                this.updateVoiceStatus('Nhấn để nói', false);
+            }
+
+            updateVoiceStatus(message, show) {
+                this.voiceStatus.textContent = message;
+                if (show) {
+                    this.voiceStatus.classList.add('show');
+                } else {
+                    this.voiceStatus.classList.remove('show');
+                }
+            }
+
+            updateCharCount() {
+                const count = this.inputText.value.length;
+                this.charCount.textContent = `${count}/5000`;
+
+                if (count > 4500) {
+                    this.charCount.style.color = '#dc3545';
+                } else if (count > 4000) {
+                    this.charCount.style.color = '#fd7e14';
+                } else {
+                    this.charCount.style.color = '#6c757d';
+                }
+            }
+
+            setDirection(direction) {
+                this.currentDirection = direction;
+
+                if (direction === 'thai-to-vietnamese') {
+                    this.thaiOption.classList.add('active');
+                    this.vietnameseOption.classList.remove('active');
+                    this.inputText.placeholder = 'พิมพ์ข้อความที่คุณต้องการแปลที่นี่... หรือ nhấn mic để nói';
+                    this.inputTitle.textContent = 'Nhập văn bản Tiếng Thái';
+                    this.outputTitle.textContent = 'Bản dịch Tiếng Việt';
+                } else {
+                    this.vietnameseOption.classList.add('active');
+                    this.thaiOption.classList.remove('active');
+                    this.inputText.placeholder = 'Nhập văn bản cần dịch sang Tiếng Thái... hoặc nhấn mic để nói';
+                    this.inputTitle.textContent = 'Nhập văn bản Tiếng Việt';
+                    this.outputTitle.textContent = 'Bản dịch Tiếng Thái';
+                }
+
+                this.clearAll();
+            }
+
+            swapLanguages() {
+                const newDirection = this.currentDirection === 'thai-to-vietnamese'
+                    ? 'vietnamese-to-thai'
+                    : 'thai-to-vietnamese';
+
+                // Swap text content
+                const inputValue = this.inputText.value;
+                const outputValue = this.outputText.textContent;
+
+                this.setDirection(newDirection);
+
+                if (outputValue && outputValue !== 'Bản dịch sẽ xuất hiện ở đây...') {
+                    this.inputText.value = outputValue;
+                    this.updateCharCount();
+                    this.autoTranslate();
+                }
+            }
+
+            showLoading() {
+                this.loading.style.display = 'block';
+                this.outputText.style.opacity = '0.5';
+                this.translateBtn.disabled = true;
+            }
+
+            hideLoading() {
+                this.loading.style.display = 'none';
+                this.outputText.style.opacity = '1';
+                this.translateBtn.disabled = false;
+            }
+
+            async translateText() {
+                const text = this.inputText.value.trim();
+
+                if (!text) {
+                    this.outputText.textContent = 'Vui lòng nhập văn bản cần dịch...';
+                    return;
+                }
+
+                this.showLoading();
+
+                try {
+                    // Simulate translation - replace with your actual API call
+                    const formData = new FormData();
+                    formData.append('text', text);
+                    formData.append('direction', this.currentDirection);
+
+                    const response = await fetch('translate.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        this.outputText.textContent = result.translation;
+                    } else {
+                        this.outputText.textContent = 'Lỗi: ' + (result.error || 'Không thể dịch văn bản');
+                    }
+                } catch (error) {
+                    console.error('Translation error:', error);
+                    this.outputText.textContent = 'Lỗi kết nối. Vui lòng thử lại sau.';
+                } finally {
+                    this.hideLoading();
+                }
+            }
+
+            autoTranslate() {
+                clearTimeout(this.autoTranslateTimeout);
+                this.autoTranslateTimeout = setTimeout(() => {
+                    if (this.inputText.value.trim().length > 2) {
+                        this.translateText();
+                    }
+                }, 1000);
+            }
+
+            clearAll() {
+                this.inputText.value = '';
+                this.outputText.textContent = 'Bản dịch sẽ xuất hiện ở đây...';
+                this.updateCharCount();
+                clearTimeout(this.autoTranslateTimeout);
+                this.stopRecording();
+            }
+
+            async copyToClipboard() {
+                const text = this.outputText.textContent;
+
+                if (!text || text === 'Bản dịch sẽ xuất hiện ở đây...') {
+                    return;
+                }
+
+                try {
+                    await navigator.clipboard.writeText(text);
+                    this.showToast('Đã sao chép vào clipboard!');
+                } catch (err) {
+                    const textArea = document.createElement('textarea');
+                    textArea.value = text;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    this.showToast('Đã sao chép vào clipboard!');
+                }
+            }
+
+            showToast(message, type = 'success') {
+                this.toastMessage.textContent = message;
+                this.toast.className = 'toast show';
+
+                if (type === 'error') {
+                    this.toast.classList.add('error');
+                }
+
+                setTimeout(() => {
+                    this.toast.classList.remove('show');
+                    setTimeout(() => {
+                        this.toast.classList.remove('error');
+                    }, 300);
+                }, 3000);
+            }
+        }
+
+        // Initialize the translator when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new ThaiVietnameseTranslator();
+        });
+    </script> -->
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+{
+    "categories": [
+        {
+            "name": "Trang Chủ",
+            "url": "index.html",
+            "products": [
+                {
+                    "name": "Menu",
+                    "slug": "menu",
+                    "url": "menu.html"
+                }
+            ]
+        },
+        {
+            "name": "Ưu Đãi Siêu HOT",
+            "url": "combo.html"
+        },
+        {
+            "name": "Giải Trí",
+            "url": "movie.html"
+        },
+        {
+            "name": "Bánh Mì Chảo",
+            "url": "collections/banhmichao.html",
+            "products": [
+                {
+                    "name": "Bánh Mì Chảo Thương Nhớ",
+                    "slug": "bmcthuongnho",
+                    "url": "products/bmcthuongnho.html"
+                },
+                {
+                    "name": "Bánh Mì Chảo Xíu Mại Sườn Cay",
+                    "slug": "bmcxiumaisuoncay",
+                    "url": "products/bmcxiumaisuoncay.html"
+                },
+                {
+                    "name": "Bánh Mì Chảo Bò Giòn",
+                    "slug": "bmcbogion",
+                    "url": "products/bmcbogion.html"
+                },
+                {
+                    "name": "Bánh Mì Bò Sốt Vang",
+                    "slug": "bmbosotvang",
+                    "url": "products/bmbosotvang.html"
+                }
+            ]
+        },
+        {
+            "name": "Bánh Tráng",
+            "url": "collections/banhtrang.html",
+            "products": [
+                {
+                    "name": "Bánh Tráng Cuộn",
+                    "slug": "banhtrangcuon",
+                    "url": "products/banhtrangcuon.html"
+                },
+                {
+                    "name": "Bánh Tráng Trộn",
+                    "slug": "banhtrangtron",
+                    "url": "products/banhtrangtron.html"
+                },
+                {
+                    "name": "Bánh Tráng Trộn Trứng",
+                    "slug": "banhtrnagtrontrung",
+                    "url": "products/banhtrnagtrontrung.html"
+                },
+                {
+                    "name": "Bánh Tráng Nướng",
+                    "slug": "banhtrangnuong",
+                    "url": "products/banhtrangnuong.html"
+                },
+                {
+                    "name": "Trứng Cút Lộn Xào Me",
+                    "slug": "trungcutlonxaome",
+                    "url": "products/trungcutlonxaome.html"
+                },
+                {
+                    "name": "Trứng Cút Lắc",
+                    "slug": "trungcutlac",
+                    "url": "products/trungcutlac.html"
+                },
+                {
+                    "name": "Trứng Cút Chiên Chà Bông Phô Mai",
+                    "slug": "trungcutchienchabongphomai",
+                    "url": "products/trungcutchienchabongphomai.html"
+                }
+            ]
+        },
+        {
+            "name": "Đồ Chiên",
+            "url": "collections/dochien.html",
+            "products": [
+                {
+                    "name": "Khoai Tây Chiên",
+                    "slug": "khoaitaychien",
+                    "url": "products/khoaitaychien.html"
+                },
+                {
+                    "name": "Khoai Tây Lắc Phô Mai",
+                    "slug": "khoaitaylacphomai",
+                    "url": "products/khoaitaylacphomai.html"
+                },
+                {
+                    "name": "Combo 5 Nem Chua Rán",
+                    "slug": "combo5nemchua",
+                    "url": "products/combo5nemchua.html"
+                },
+                {
+                    "name": "Khoai Môn Lệ Phố",
+                    "slug": "khoaimonlepho",
+                    "url": "products/khoaimonlepho.html"
+                },
+                {
+                    "name": "Bánh Mì Nướng Muối Ớt",
+                    "slug": "bmnuongmuoiot",
+                    "url": "products/bmnuongmuoiot.html"
+                },
+                {
+                    "name": "Bánh Mì Nướng Mật Ong",
+                    "slug": "bmnuongmatong",
+                    "url": "products/bmnuongmatong.html"
+                },
+                {
+                    "name": "Bánh Mì Nướng Bơ Tỏi",
+                    "slug": "bmnuongbotoi",
+                    "url": "products/bmnuongbotoi.html"
+                },
+                {
+                    "name": "Bánh Mì Nướng Đặc Biệt",
+                    "slug": "bmnuongdacbiet",
+                    "url": "products/bmnuongdacbiet.html"
+                }
+            ]
+        },
+        {
+            "name": "Đồ Uống",
+            "url": "collections/douong.html",
+            "products": [
+                {
+                    "name": "Trà Sâm Dứa",
+                    "slug": "trasamdua",
+                    "url": "products/trasamdua.html"
+                },
+                {
+                    "name": "Trà Quất",
+                    "slug": "traquat",
+                    "url": "products/traquat.html"
+                },
+                {
+                    "name": "Trà Đào Xả",
+                    "slug": "tradaoxa",
+                    "url": "products/tradaoxa.html"
+                },
+                {
+                    "name": "Trà Đào",
+                    "slug": "tradao",
+                    "url": "products/tradao.html"
+                },
+                {
+                    "name": "Mojito Việt Quất",
+                    "slug": "mojitovietquat",
+                    "url": "products/mojitovietquat.html"
+                },
+                {
+                    "name": "Mojito Cam Xả",
+                    "slug": "mojitocamxa",
+                    "url": "products/mojitocamxa.html"
+                },
+                {
+                    "name": "Mojito Táo Xanh",
+                    "slug": "mojitotaoxanh",
+                    "url": "products/mojitotaoxanh.html"
+                }
+            ]
+        },
+        {
+            "name": "Ăn Vặt & Topping",
+            "url": "collections/anvatvatopping.html",
+            "products": [
+                {
+                    "name": "Chân Gà Sốt Thái",
+                    "slug": "changasotthai",
+                    "url": "products/changasotthai.html"
+                },
+                {
+                    "name": "Xoài Dầm Sốt Thái",
+                    "slug": "xoaidamsotthai",
+                    "url": "products/xoaidamsotthai.html"
+                },
+                {
+                    "name": "Chân Gà Xả Tắc",
+                    "slug": "changaxatac",
+                    "url": "products/changaxatac.html"
+                },
+                {
+                    "name": "Xíu Mại(3 Viên)",
+                    "slug": "topping_xiumai",
+                    "url": "products/topping_xiumai.html"
+                },
+                {
+                    "name": "Xúc Xích",
+                    "slug": "topping_xucxich",
+                    "url": "products/topping_xucxich.html"
+                },
+                {
+                    "name": "Pate",
+                    "slug": "topping_pate",
+                    "url": "products/topping_pate.html"
+                },
+                {
+                    "name": "Trứng",
+                    "slug": "topping_trung",
+                    "url": "products/topping_trung.html"
+                },
+                {
+                    "name": "Khoai - Viên - Chả",
+                    "slug": "topping_khoai_vien_cha",
+                    "url": "products/topping_khoai_vien_cha.html"
+                },
+                {
+                    "name": "Thịt Bò Giòn",
+                    "slug": "topping_thitbogion",
+                    "url": "products/topping_thitbogion.html"
+                },
+                {
+                    "name": "Bánh Mì Ăn Kèm",
+                    "slug": "banhmiankem",
+                    "url": "products/banhmiankem.html"
+                }
+            ]
+        }
+    ]
+}

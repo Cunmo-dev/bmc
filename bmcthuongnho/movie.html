@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineVerse - Khám Phá Thế Giới Điện Ảnh</title>
+    <link rel="stylesheet" href="libMovie/style.css">
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <header>
+        <nav>
+            <div class="logo">🎬 CineVerse</div>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Tìm kiếm phim...">
+                <button id="searchBtn" class="search-btn">🔍</button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#movies">Phim</a></li>
+                <li><a href="#trending">Thịnh hành</a></li>
+                <li><a href="#about">Về chúng tôi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar Menu -->
+    <aside class="sidebar">
+        <h3 class="sidebar-title">🎭 Thể Loại Phim</h3>
+        <ul class="genre-list" id="genreList">
+            <!-- Genres will be loaded from JSON -->
+        </ul>
+    </aside>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Khám Phá Điện Ảnh</h1>
+            <p>Trải nghiệm hàng ngàn bộ phim đỉnh cao từ khắp nơi trên thế giới</p>
+            <a href="#movies" class="cta-button">Khám phá ngay</a>
+        </div>
+    </section>
+
+    <div class="container" id="movies">
+        <h2 class="section-title">🔥 Phim Hot Nhất</h2>
+        <div class="movie-grid" id="movieGrid">
+            <!-- Movies will be loaded from JSON -->
+        </div>
+
+        <h2 class="section-title" id="about">✨ Tính Năng Nổi Bật</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📺</div>
+                <h3 class="feature-title">Chất Lượng 4K</h3>
+                <p class="feature-desc">Trải nghiệm phim ảnh với chất lượng hình ảnh sắc nét đến từng chi tiết</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3 class="feature-title">Nội Dung Đa Dạng</h3>
+                <p class="feature-desc">Hàng nghìn bộ phim từ nhiều quốc gia và thể loại khác nhau</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Tải Nhanh</h3>
+                <p class="feature-desc">Công nghệ streaming tiên tiến, không buffering, không chờ đợi</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CineVerse. Trải nghiệm điện ảnh đẳng cấp thế giới.</p>
+    </footer>
+
+    <script src="libMovie/script.js"></script>
+</body>
+</html>

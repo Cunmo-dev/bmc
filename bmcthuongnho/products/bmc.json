@@ -1,0 +1,120 @@
+{
+    "bmcthuongnho": {
+        "image": "image_food/bmcthuongnho900x900.png",
+        "productPrice": "45,000₫",
+        "productSku": "BMCTN01",
+        "productName": "Chảo Thương Nhớ",
+        "url": "products/bmcthuongnho.html",
+        "toppings": [
+            {
+                "name": "Xíu Mại(3 viên)",
+                "value": "xiumai",
+                "price": 10000
+            },
+            {
+                "name": "Xúc Xích",
+                "value": "xuc-xich",
+                "price": 10000
+            },
+            {
+                "name": "Pate",
+                "value": "pate",
+                "price": 8000
+            },
+            {
+                "name": "Trứng",
+                "value": "trung",
+                "price": 5000
+            },
+            {
+                "name": "Khoai + Viên + Chả",
+                "value": "KhoaiVienCha",
+                "price": 10000
+            },
+            {
+                "name": "Thịt bò thêm",
+                "value": "Thịt bò",
+                "price": 15000
+            }
+        ],
+        "productDescription": "Bánh Mì Chảo Thương Nhớ – Hương Vị Gây Thương Nhớ Ngay Từ Miếng Đầu Tiên\n\nNếu bạn đang tìm kiếm một món ăn vừa ngon, vừa no, lại vừa đậm đà hương vị, thì Bánh Mì Chảo Thương Nhớ chính là lựa chọn hoàn hảo!\n\nMón bánh mì chảo đặc trưng của quán là sự kết hợp hài hòa giữa các nguyên liệu quen thuộc nhưng đầy cuốn hút. Một phần chảo nóng hổi bao gồm: bánh mì giòn rụm, nước sốt đậm đà thấm trọn từng nguyên liệu, pate béo bùi, trứng ốp la vàng ươm(trứng lòng đào, bạn nào ăn trứng chín note giúp quán nha), xúc xích đậm vị, viên chiên giòn thơm, chả cốm dẻo bùi, và khoai tây chiên giòn rụm. Tất cả hòa quyện tạo nên một bữa ăn không chỉ ngon miệng mà còn đầy đủ dinh dưỡng.\n\nCầm ổ bánh mì nóng hổi, xé từng miếng nhỏ và chấm vào nước sốt sánh mịn, bạn sẽ cảm nhận được hương vị khó quên – một sự hòa quyện hoàn hảo giữa béo, bùi, giòn, thơm. Đây không chỉ là món ăn no bụng mà còn mang đến cảm giác ấm áp, như một chút hoài niệm về những bữa ăn ngon bên người thân."
+    },
+    "bmcbogion": {
+        "image": "image_food/bmcbogion900x900.png",
+        "productPrice": "50,000₫",
+        "productSku": "BMCBG01",
+        "productName": "Chảo Bò Giòn",
+        "url": "products/bmcbogion.html",
+        "toppings": [
+            {
+                "name": "Xíu Mại(3 viên)",
+                "value": "xiumai",
+                "price": 10000
+            },
+            {
+                "name": "Xúc Xích",
+                "value": "xuc-xich",
+                "price": 10000
+            },
+            {
+                "name": "Pate",
+                "value": "pate",
+                "price": 8000
+            },
+            {
+                "name": "Trứng",
+                "value": "trung",
+                "price": 5000
+            },
+            {
+                "name": "Khoai + Viên + Chả",
+                "value": "KhoaiVienCha",
+                "price": 10000
+            },
+            {
+                "name": "Thịt bò thêm",
+                "value": "Thịt bò",
+                "price": 15000
+            }
+        ],
+        "productDescription": "Bánh mì chảo bò giòn với sự kết hợp giữa hương vị đậm đà của thịt bò mềm thơm, trứng rán béo ngậy, pate bùi bùi, cùng xúc xích dai giòn và khoai tây chiên vàng ruộm. \n\nTất cả được bày biện trên một chiếc chảo nóng hổi, giữ nguyên độ nóng và hương vị trọn vẹn. Khi thưởng thức, thực khách có thể chấm bánh mì giòn rụm vào nước sốt đậm đà, hòa quyện cùng các nguyên liệu để tạo nên trải nghiệm ẩm thực khó quên. \n\nĐây là lựa chọn lý tưởng cho bữa sáng hoặc bữa xế, vừa ngon miệng vừa đầy đủ dinh dưỡng."
+    },
+    "bmcxiumaisuoncay": {
+        "image": "image_food/bmcxiumaisuoncay900x900.png",
+        "productPrice": "50,000₫",
+        "productSku": "BMCXMSC01",
+        "productName": "Chảo Xíu Mại Sườn Cay",
+        "url": "products/bmcxiumaisuoncay.html",
+        "toppings": [
+            {
+                "name": "Xíu Mại(3 viên)",
+                "value": "xiumai",
+                "price": 10000
+            },
+            {
+                "name": "Xúc Xích",
+                "value": "xuc-xich",
+                "price": 10000
+            },
+            {
+                "name": "Trứng",
+                "value": "trung",
+                "price": 5000
+            },
+            {
+                "name": "Khoai + Viên + Chả",
+                "value": "KhoaiVienCha",
+                "price": 10000
+            }
+        ],
+        "productDescription": "Bánh Mì Chảo Xíu Mại Sườn Cay – Hương Vị Đậm Đà, Lôi Cuốn \n\nBánh mì chảo xíu mại sườn cay là một món ăn hấp dẫn với sự kết hợp đầy đủ hương vị và dinh dưỡng. \n\nMỗi phần ăn gồm chảo nóng hổi với trứng lòng đào béo ngậy, xíu mại thịt mềm mọng thấm đều nước sốt đậm đà, sườn non được hầm mềm với vị cay nhẹ kích thích vị giác. \n\nThêm vào đó, khoai tây chiên giòn rụm và xúc xích thơm lừng tạo nên sự cân bằng hoàn hảo giữa các thành phần. \n\nKhi thưởng thức, bạn chỉ cần xé một miếng bánh mì nóng giòn, chấm vào sốt sánh mịn, kết hợp với vị béo của trứng, vị đậm đà của xíu mại và sườn cay, tất cả hòa quyện tạo nên trải nghiệm khó quên. \n\nMột bữa ăn vừa ngon miệng vừa đầy đủ năng lượng, sẵn sàng chinh phục mọi tín đồ ẩm thực!"
+    },
+    "bmbosotvang": {
+        "image": "image_food/bmbosotvang900x900.png",
+        "productPrice": "45,000₫",
+        "productSku": "BMCBSV01",
+        "productName": "Bò Sốt Vang",
+        "url": "products/bmbosotvang.html",
+        "productDescription": "Bánh Mì Bò Sốt Vang – Hương Vị Nồng Nàn, Đậm Đà Khó Cưỡng \n\nBánh mì bò sốt vang là sự kết hợp hoàn hảo giữa thịt bò hầm mềm thơm, nước sốt vang sánh mịn và bánh mì nóng giòn. \r\nThịt bò được ninh kỹ với các loại rau củ, cà chua, quế, hồi và các loại gia vị đặc trưng, tạo nên hương vị đậm đà, thơm nồng đầy lôi cuốn. \n\nKhi ăn, từng miếng bò mềm tan ngay trong miệng, hòa quyện với nước sốt béo ngậy và một chút cay nhẹ, làm dậy lên sự hấp dẫn khó cưỡng. \n\nChấm miếng bánh mì giòn rụm vào sốt, thưởng thức cùng chút rau thơm tươi mát, bạn sẽ cảm nhận được trọn vẹn sự tinh tế của món ăn này. Một lựa chọn lý tưởng cho những ai yêu thích sự kết hợp giữa hương vị truyền thống và nét đặc trưng của ẩm thực phương Tây!"
+    }
+}
