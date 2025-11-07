@@ -116,5 +116,21 @@
         "productName": "Bò Sốt Vang",
         "url": "products/bmbosotvang.html",
         "productDescription": "Bánh Mì Bò Sốt Vang – Hương Vị Nồng Nàn, Đậm Đà Khó Cưỡng \n\nBánh mì bò sốt vang là sự kết hợp hoàn hảo giữa thịt bò hầm mềm thơm, nước sốt vang sánh mịn và bánh mì nóng giòn. \r\nThịt bò được ninh kỹ với các loại rau củ, cà chua, quế, hồi và các loại gia vị đặc trưng, tạo nên hương vị đậm đà, thơm nồng đầy lôi cuốn. \n\nKhi ăn, từng miếng bò mềm tan ngay trong miệng, hòa quyện với nước sốt béo ngậy và một chút cay nhẹ, làm dậy lên sự hấp dẫn khó cưỡng. \n\nChấm miếng bánh mì giòn rụm vào sốt, thưởng thức cùng chút rau thơm tươi mát, bạn sẽ cảm nhận được trọn vẹn sự tinh tế của món ăn này. Một lựa chọn lý tưởng cho những ai yêu thích sự kết hợp giữa hương vị truyền thống và nét đặc trưng của ẩm thực phương Tây!"
+    },
+    "bmque": {
+        "image": "image_food/bmque900x900.png",
+        "productPrice": "25,000₫",
+        "productSku": "DAVBMQ1",
+        "productName": "Combo 5 Bánh Mì Que",
+        "url": "products/bmque.html",
+        "productDescription": "Bánh mì que là món ăn được chế biến đơn giản nhưng hương vị hấp dẫn, kích thích vị giác vô cùng. Chiếc bánh mì nhỏ chỉ bằng ngón tay, được nướng nóng hổi, nhân pate thơm lừng. Khi ăn chỉ cần thêm chút tương ớt cay cay là trọn vị."
+    },
+    "bmkep": {
+        "image": "image_food/bmkep900x900.png",
+        "productPrice": "25,000₫",
+        "productSku": "DAVBMK1",
+        "productName": "Bánh Mì Kẹp Pate Xúc Xích",
+        "url": "products/bmkep.html",
+        "productDescription": "Bữa sáng nhanh gọn nhưng vẫn thơm ngon với BÁNH MÌ PATE KẸP XÚC XÍCH – sự kết hợp hoàn hảo giữa bánh mì giòn rụm, pate béo ngậy, bơ trứng mịn màng và xúc xích rán thơm lừng. Cắn một miếng, bạn sẽ cảm nhận ngay độ giòn tan của vỏ bánh, vị béo ngậy hòa quyện cùng xúc xích dai ngon, thêm chút tươi mát từ rau dưa ăn kèm. Không chỉ giàu năng lượng cho ngày mới, đây còn là lựa chọn tuyệt vời cho những tín đồ ẩm thực đường phố!"
     }
 }

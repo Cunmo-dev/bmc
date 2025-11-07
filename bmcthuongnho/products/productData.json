@@ -7,7 +7,7 @@
         "url": "products/bmcthuongnho.html",
         "toppings": [
             {
-                "name": "Xíu Mại(3 viên)",
+                "name": "Trứng + Khoai",
                 "value": "xiumai",
                 "price": 10000
             },
@@ -27,14 +27,14 @@
                 "price": 5000
             },
             {
-                "name": "Khoai + Viên + Chả",
+                "name": "Chả + Khoai",
                 "value": "KhoaiVienCha",
                 "price": 10000
             },
             {
-                "name": "Thịt bò thêm",
+                "name": "1/2 Xúc Xích + Chả",
                 "value": "Thịt bò",
-                "price": 15000
+                "price": 12000
             }
         ],
         "extraWater": [
@@ -77,7 +77,7 @@
         "url": "products/bmcbogion.html",
         "toppings": [
             {
-                "name": "Xíu Mại(3 viên)",
+                "name": "Trứng + Khoai",
                 "value": "xiumai",
                 "price": 10000
             },
@@ -97,9 +97,14 @@
                 "price": 5000
             },
             {
-                "name": "Khoai + Viên + Chả",
+                "name": "Chả + Khoai",
                 "value": "KhoaiVienCha",
                 "price": 10000
+            },
+            {
+                "name": "1/2 Xúc Xích + Chả",
+                "value": "Thịt bò",
+                "price": 12000
             },
             {
                 "name": "Thịt bò thêm",
@@ -147,7 +152,7 @@
         "url": "products/bmcxiumaisuoncay.html",
         "toppings": [
             {
-                "name": "Xíu Mại(3 viên)",
+                "name": "Trứng + Khoai",
                 "value": "xiumai",
                 "price": 10000
             },
@@ -157,14 +162,24 @@
                 "price": 10000
             },
             {
+                "name": "Pate",
+                "value": "pate",
+                "price": 8000
+            },
+            {
                 "name": "Trứng",
                 "value": "trung",
                 "price": 5000
             },
             {
-                "name": "Khoai + Viên + Chả",
+                "name": "Chả + Khoai",
                 "value": "KhoaiVienCha",
                 "price": 10000
+            },
+            {
+                "name": "1/2 Xúc Xích + Chả",
+                "value": "Thịt bò",
+                "price": 12000
             }
         ],
         "extraWater": [
@@ -312,6 +327,82 @@
             }
         ],
         "productDescription": "Bánh tráng trộn tại Bánh Mì Chảo Thương Nhớ mang đến hương vị hài hòa, kết hợp giữa vị chua nhẹ, cay cay và chút béo bùi hấp dẫn. \n\nTừng sợi bánh mềm dai, quyện cùng nước sốt đậm đà, tạo nên một món ăn vặt không thể chối từ. \n\nHương thơm đặc trưng cùng độ giòn của các thành phần đi kèm khiến mỗi miếng bánh thêm phần thú vị."
+    },
+    "bmque": {
+        "image": "image_food/bmque900x900.png",
+        "productPrice": "25,000₫",
+        "productSku": "DAVBMQ1",
+        "productName": "Combo 5 Bánh Mì Que",
+        "url": "products/bmque.html",
+        "extraWater": [
+            {
+                "name": "Trà Sâm Dứa",
+                "price": 5000
+            },
+            {
+                "name": "Trà Quất",
+                "price": 20000
+            },
+            {
+                "name": "Mojito Việt Quất",
+                "price": 25000
+            },
+            {
+                "name": "Mojito Táo Xanh",
+                "price": 25000
+            },
+            {
+                "name": "Mojito Cam Xả",
+                "price": 25000
+            },
+            {
+                "name": "Trà Đào",
+                "price": 25000
+            },
+            {
+                "name": "Trà Đào Xả",
+                "price": 25000
+            }
+        ],
+        "productDescription": "Bánh mì que là món ăn được chế biến đơn giản nhưng hương vị hấp dẫn, kích thích vị giác vô cùng. Chiếc bánh mì nhỏ chỉ bằng ngón tay, được nướng nóng hổi, nhân pate thơm lừng. Khi ăn chỉ cần thêm chút tương ớt cay cay là trọn vị."
+    },
+    "bmkep": {
+        "image": "image_food/bmkep900x900.png",
+        "productPrice": "25,000₫",
+        "productSku": "DAVBMQ1",
+        "productName": "Bánh Mì Kẹp Pate Xúc Xích",
+        "url": "products/bmkep.html",
+        "extraWater": [
+            {
+                "name": "Trà Sâm Dứa",
+                "price": 5000
+            },
+            {
+                "name": "Trà Quất",
+                "price": 20000
+            },
+            {
+                "name": "Mojito Việt Quất",
+                "price": 25000
+            },
+            {
+                "name": "Mojito Táo Xanh",
+                "price": 25000
+            },
+            {
+                "name": "Mojito Cam Xả",
+                "price": 25000
+            },
+            {
+                "name": "Trà Đào",
+                "price": 25000
+            },
+            {
+                "name": "Trà Đào Xả",
+                "price": 25000
+            }
+        ],
+         "productDescription": "Bữa sáng nhanh gọn nhưng vẫn thơm ngon với BÁNH MÌ PATE KẸP XÚC XÍCH – sự kết hợp hoàn hảo giữa bánh mì giòn rụm, pate béo ngậy, bơ trứng mịn màng và xúc xích rán thơm lừng. Cắn một miếng, bạn sẽ cảm nhận ngay độ giòn tan của vỏ bánh, vị béo ngậy hòa quyện cùng xúc xích dai ngon, thêm chút tươi mát từ rau dưa ăn kèm. Không chỉ giàu năng lượng cho ngày mới, đây còn là lựa chọn tuyệt vời cho những tín đồ ẩm thực đường phố!"
     },
     "banhtrnagtrontrung": {
         "image": "image_food/banhtrangtrontrung900x900.png",
@@ -1341,7 +1432,7 @@
     },
     "topping_xiumai": {
         "image": "image_food/topping_xiumai900x900.png",
-        "productPrice": "10,000₫",
+        "productPrice": "8,000₫",
         "productSku": "TPXM1",
         "productName": "Xíu Mại",
         "url": "products/topping_xiumai.html",
@@ -1375,7 +1466,7 @@
                 "price": 25000
             }
         ],
-        "productDescription": "Topping dành cho các món bánh mì chảo - 10K/3V"
+        "productDescription": "Topping dành cho các món bánh mì chảo - 8k 1 viên to"
     },
     "topping_xucxich": {
         "image": "image_food/topping_xucxich900x900.png",

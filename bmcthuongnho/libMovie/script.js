@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     setupSearch();
     setupModal();
     
-    showLoading();
+    //showLoading();
     
     // Load categories config first
     await loadCategoriesConfig();
@@ -358,7 +358,7 @@ async function loadAllCategoryPlaylistsProgressively() {
         .map(cat => cat.id);
 
     // Hiển thị loading với progress
-    showProgressiveLoading(categories.length);
+    //showProgressiveLoading(categories.length);
 
     let completedCount = 0;
     let hasDisplayedAny = false;

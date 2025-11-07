@@ -42,6 +42,16 @@
                     "name": "Bánh Mì Bò Sốt Vang",
                     "slug": "bmbosotvang",
                     "url": "products/bmbosotvang.html"
+                },
+                {
+                    "name": "Bánh Mì Que",
+                    "slug": "bmque",
+                    "url": "products/bmque.html"
+                },
+                {
+                    "name": "Bánh Mì Kẹp Trứng Pate Xúc Xích",
+                    "slug": "bmkep",
+                    "url": "products/bmkep.html"
                 }
             ]
         },
