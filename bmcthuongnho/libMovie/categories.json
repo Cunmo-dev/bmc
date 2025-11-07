@@ -1,0 +1,28 @@
+{
+  "categories": [
+    {
+      "id": "all",
+      "name": "Tất Cả",
+      "icon": "🎬",
+      "url": null
+    },
+    {
+      "id": "action",
+      "name": "Hành Động",
+      "icon": "⚔️",
+      "url": "https://www.youtube.com/@Tuvibacdauvn/playlists"
+    },
+    {
+      "id": "comedy",
+      "name": "Hài Hước",
+      "icon": "😂",
+      "url": "https://www.youtube.com/@Tuvibacdauvn/playlists"
+    },
+    {
+      "id": "drama",
+      "name": "Chính Kịch",
+      "icon": "🎭",
+      "url": "https://www.youtube.com/@motbantinhca/playlists"
+    }
+  ]
+}

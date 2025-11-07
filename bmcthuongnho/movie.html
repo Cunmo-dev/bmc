@@ -772,38 +772,7 @@
                 <aside class="categories-sidebar" id="genres">
                     <h2 class="sidebar-title">Thể Loại</h2>
                     <div class="category-list">
-                        <div class="category-item active" onclick="filterByGenre('all')">
-                            <div class="category-icon">🎬</div>
-                            <span>Tất Cả</span>
-                        </div>
-                        <div class="category-item" onclick="filterByGenre('action')">
-                            <div class="category-icon">⚔️</div>
-                            <span>Hành Động</span>
-                        </div>
-                        <div class="category-item" onclick="filterByGenre('comedy')">
-                            <div class="category-icon">😂</div>
-                            <span>Hài Hước</span>
-                        </div>
-                        <div class="category-item" onclick="filterByGenre('drama')">
-                            <div class="category-icon">🎭</div>
-                            <span>Chính Kịch</span>
-                        </div>
-                        <div class="category-item" onclick="filterByGenre('horror')">
-                            <div class="category-icon">👻</div>
-                            <span>Kinh Dị</span>
-                        </div>
-                        <div class="category-item" onclick="filterByGenre('romance')">
-                            <div class="category-icon">💕</div>
-                            <span>Lãng Mạn</span>
-                        </div>
-                        <div class="category-item" onclick="filterByGenre('sci-fi')">
-                            <div class="category-icon">🚀</div>
-                            <span>Khoa Học Viễn Tưởng</span>
-                        </div>
-                        <div class="category-item" onclick="filterByGenre('animation')">
-                            <div class="category-icon">🎨</div>
-                            <span>Hoạt Hình</span>
-                        </div>
+                        
                     </div>
                 </aside>
 
@@ -980,14 +949,16 @@
         }
 
         .movie-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 107, 53, 0.3);
-            cursor: pointer;
-        }
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 107, 53, 0.3);
+    cursor: pointer;
+    display: flex; /* THÊM */
+    flex-direction: column; /* THÊM */
+}
 
         .movie-card:hover {
             transform: translateY(-10px) scale(1.02);
@@ -995,18 +966,30 @@
         }
 
         .movie-poster {
-            width: 100%;
-            height: 350px;
-            background: linear-gradient(45deg, #ff6b35, #1a1a2e);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: rgba(255, 255, 255, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
+    width: 100%;
+    height: 350px;
+    background: linear-gradient(45deg, #ff6b35, #1a1a2e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0; /* THÊM - ngăn poster co lại */
+}
 
+
+.movie-poster img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
         .movie-poster::before {
             content: '🎬';
             font-size: 4rem;

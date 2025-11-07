@@ -1,5 +1,6 @@
 // Thêm API Key của bạn ở đây
 const YOUTUBE_API_KEY = 'AIzaSyA3GCyKXbEx2pZNdDCkl8Aq5mdrb8iKwwU'; // Thay bằng API key thực của bạn
+let categoriesConfig = null;
 // Hàm lấy Channel ID từ handle
 async function getChannelIdFromHandle(handle) {
     try {
@@ -309,41 +310,52 @@ function extractYtInitialDataFromHtml(html) {
 
 // Sample movie data (fallback data)
 const fallbackMovies = [];
-
-// YouTube URLs cho mỗi thể loại - Thay đổi các URL này thành URLs thực tế của bạn
-const categoryUrls = {
-    'all': null, // Hiển thị tất cả
-    'action': 'https://www.youtube.com/@Tuvibacdauvn/playlists', // Example URL - replace with actual
-    'comedy': 'https://www.youtube.com/@Tuvibacdauvn/playlists', // Example URL - replace with actual
-    'drama': 'https://www.youtube.com/@Tuvibacdauvn/playlists', // Example URL - replace with actual
-    'horror': 'https://www.youtube.com/@Tuvibacdauvn/playlists', // Example URL - replace with actual
-    'romance': 'https://www.youtube.com/@Tuvibacdauvn/playlists', // Example URL - replace with actual
-    'sci-fi': 'https://www.youtube.com/@Tuvibacdauvn/playlists', // Example URL - replace with actual
-    'animation': 'https://www.youtube.com/@Tuvibacdauvn/playlists' // Example URL - replace with actual
-};
-
 let currentCategory = 'all';
 let allPlaylists = []; // Lưu trữ tất cả playlists đã tải
 let playlistsByCategory = {}; // Lưu trữ playlists theo từng category
 
 // Load movies on page load
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     setupSearch();
     setupModal();
-
-    // Show loading initially
+    
     showLoading();
-
-    // Hiển thị fallback movies trước (nếu có)
+    
+    // Load categories config first
+    await loadCategoriesConfig();
+    
+    // Render categories in sidebar
+    renderCategoriesSidebar();
+    
     if (fallbackMovies.length > 0) {
         loadMovies(fallbackMovies);
     }
-
-    // Load playlists cho tất cả categories và hiển thị dần dần
+    
     loadAllCategoryPlaylistsProgressively();
 });
+
+function renderCategoriesSidebar() {
+    const categoryList = document.querySelector('.category-list');
+    categoryList.innerHTML = '';
+    
+    categoriesConfig.forEach(category => {
+        const categoryItem = document.createElement('div');
+        categoryItem.className = 'category-item' + (category.id === 'all' ? ' active' : '');
+        categoryItem.onclick = () => filterByGenre(category.id);
+        
+        categoryItem.innerHTML = `
+            <div class="category-icon">${category.icon}</div>
+            <span>${category.name}</span>
+        `;
+        
+        categoryList.appendChild(categoryItem);
+    });
+}
+
 async function loadAllCategoryPlaylistsProgressively() {
-    const categories = ['action', 'comedy', 'drama', 'horror', 'romance', 'sci-fi', 'animation'];
+    const categories = categoriesConfig
+        .filter(cat => cat.id !== 'all' && cat.url)
+        .map(cat => cat.id);
 
     // Hiển thị loading với progress
     showProgressiveLoading(categories.length);
@@ -353,7 +365,7 @@ async function loadAllCategoryPlaylistsProgressively() {
 
     // Load từng category song song nhưng hiển thị ngay khi xong
     const loadPromises = categories.map(async (category, index) => {
-        if (!categoryUrls[category]) {
+        if (!getCategoryUrl(category)) {
             playlistsByCategory[category] = [];
             return;
         }
@@ -364,7 +376,7 @@ async function loadAllCategoryPlaylistsProgressively() {
             // Delay để tránh spam requests
             await new Promise(resolve => setTimeout(resolve, index * 500));
 
-            const playlists = await loadPlaylistsFromURL(categoryUrls[category]);
+            const playlists = await loadPlaylistsFromURL(getCategoryUrl(category));
             const movieData = convertPlaylistsToMovies(playlists, category);
             playlistsByCategory[category] = movieData;
 
@@ -403,6 +415,15 @@ async function loadAllCategoryPlaylistsProgressively() {
     hideProgressiveLoading();
     console.log('All playlists loaded:', allPlaylists);
 }
+function getCategoryUrl(categoryId) {
+    const category = categoriesConfig.find(cat => cat.id === categoryId);
+    return category ? category.url : null;
+}
+
+function getCategoryName(categoryId) {
+    const category = categoriesConfig.find(cat => cat.id === categoryId);
+    return category ? category.name : categoryId;
+}
 function hideProgressiveLoading() {
     setTimeout(() => {
         const progressContainer = document.getElementById('progressContainer');
@@ -417,6 +438,14 @@ function hideProgressiveLoading() {
         }
     }, 2000); // Hiển thị thêm 2s rồi mới ẩn
 }
+
+function getCategoryDisplayNames() {
+    const names = {};
+    categoriesConfig.forEach(cat => {
+        names[cat.id] = cat.name;
+    });
+    return names;
+}
 function updateProgressiveLoading(completed, total, categoryName, hasError = false) {
     const progressFill = document.getElementById('progressFill');
     const progressText = document.getElementById('progressText');
@@ -427,15 +456,7 @@ function updateProgressiveLoading(completed, total, categoryName, hasError = fal
         progressFill.style.width = percentage + '%';
         progressText.textContent = `${completed}/${total} categories loaded`;
 
-        const categoryDisplayNames = {
-            'action': 'Hành Động',
-            'comedy': 'Hài Hước',
-            'drama': 'Chính Kịch',
-            'horror': 'Kinh Dị',
-            'romance': 'Lãng Mạn',
-            'sci-fi': 'Khoa Học Viễn Tưởng',
-            'animation': 'Hoạt Hình'
-        };
+        const categoryDisplayNames = getCategoryDisplayNames();
 
         if (hasError) {
             currentCategory.textContent = `❌ Lỗi: ${categoryDisplayNames[categoryName] || categoryName}`;
@@ -549,10 +570,10 @@ async function loadAllCategoryPlaylists() {
 
     // Load playlists song song cho tất cả categories
     const promises = categories.map(async (category) => {
-        if (categoryUrls[category]) {
+        if (getCategoryUrl(category)) {
             try {
                 console.log(`Loading playlists for ${category}...`);
-                const playlists = await loadPlaylistsFromURL(categoryUrls[category]);
+                const playlists = await loadPlaylistsFromURL(getCategoryUrl(category));
                 const movieData = convertPlaylistsToMovies(playlists, category);
                 playlistsByCategory[category] = movieData;
 
@@ -639,7 +660,18 @@ function generateMockPlaylists() {
         }
     ];
 }
-
+async function loadCategoriesConfig() {
+    try {
+        const response = await fetch('./libMovie/categories.json');
+        const data = await response.json();
+        categoriesConfig = data.categories;
+        return categoriesConfig;
+    } catch (error) {
+        console.error('Error loading categories config:', error);
+        // Fallback to default if JSON load fails
+        return getDefaultCategories();
+    }
+}
 // Hàm chuyển đổi playlists thành format movies
 function convertPlaylistsToMovies(playlists, category) {
     return playlists.map((playlist, index) => {
@@ -698,8 +730,8 @@ function createMovieCard(movie) {
 
     // Sử dụng ảnh từ YouTube nếu có, otherwise sử dụng placeholder
     const posterContent = movie.imageUrl
-        ? `<img src="${movie.imageUrl}" alt="${movie.title}" style="width: 100%; height: 100%; object-fit: cover;">`
-        : '<div style="font-size: 4rem; opacity: 0.5;">🎬</div>';
+    ? `<img src="${movie.imageUrl}" alt="${movie.title}" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;">`
+    : '<div style="font-size: 4rem; opacity: 0.5;">🎬</div>';
 
     card.innerHTML = `
         <div class="movie-poster">${posterContent}</div>
@@ -738,20 +770,30 @@ function setupModal() {
 async function filterByGenre(genre) {
     currentCategory = genre;
 
+    // ** THÊM ĐOẠN NÀY: Nếu đang ở playlist view, quay lại movies view trước **
+    if (isPlaylistView) {
+        backToMovies();
+        // Đợi DOM được render lại
+        await new Promise(resolve => setTimeout(resolve, 100));
+    }
+
     // Update active category
     document.querySelectorAll('.category-item').forEach(item => {
         item.classList.remove('active');
     });
-    event.target.closest('.category-item').classList.add('active');
+    
+    // ** SỬA DÒNG NÀY để tránh lỗi khi event không có target **
+    const targetElement = event?.target?.closest('.category-item');
+    if (targetElement) {
+        targetElement.classList.add('active');
+    }
 
     // Filter movies
     let filteredMovies = [];
 
     if (genre === 'all') {
-        // Show all: fallback movies + all loaded playlists
         filteredMovies = [...fallbackMovies, ...allPlaylists];
     } else {
-        // Show specific category
         const playlistMovies = playlistsByCategory[genre] || [];
         const fallbackOfCategory = fallbackMovies.filter(movie =>
             movie.categories.includes(genre)
@@ -773,19 +815,13 @@ async function filterByGenre(genre) {
 
     // Update section title
     const sectionTitle = document.querySelector('.section-title');
-    if (genre === 'all') {
-        sectionTitle.textContent = 'Phim Nổi Bật';
-    } else {
-        const categoryNames = {
-            'action': 'Phim Hành Động',
-            'comedy': 'Phim Hài Hước',
-            'drama': 'Phim Chính Kịch',
-            'horror': 'Phim Kinh Dị',
-            'romance': 'Phim Lãng Mạn',
-            'sci-fi': 'Phim Khoa Học Viễn Tưởng',
-            'animation': 'Phim Hoạt Hình'
-        };
-        sectionTitle.textContent = categoryNames[genre] || 'Phim Nổi Bật';
+    if (sectionTitle) { // ** THÊM CHECK NULL **
+        if (genre === 'all') {
+            sectionTitle.textContent = 'Phim Nổi Bật';
+        } else {
+            const categoryNames = getCategoryDisplayNames(); // ** SỬA NẾU BẠN ĐÃ ÁP DỤNG JSON CONFIG **
+            sectionTitle.textContent = categoryNames[genre] || 'Phim Nổi Bật';
+        }
     }
 }
 
@@ -1066,44 +1102,142 @@ function playVideo(videoId, videoTitle) {
     showVideoModal(videoId, videoTitle);
 }
 
-// Hàm phát tất cả video (mở playlist trên YouTube)
+
+// Hàm phát tất cả video - phát video đầu tiên trong modal
 function playAllVideos() {
-    if (currentPlaylistId) {
-        const playlistUrl = `https://www.youtube.com/playlist?list=${currentPlaylistId}&autoplay=1`;
-        window.open(playlistUrl, '_blank');
+    if (currentPlaylistVideos.length > 0) {
+        const firstVideo = currentPlaylistVideos[0];
+        showVideoModal(firstVideo.id, firstVideo.title);
     }
 }
 
-// Hàm phát ngẫu nhiên
+// Hàm phát ngẫu nhiên - chọn video ngẫu nhiên và phát trong modal
 function shufflePlaylist() {
-    if (currentPlaylistId) {
-        const playlistUrl = `https://www.youtube.com/playlist?list=${currentPlaylistId}&autoplay=1&shuffle=1`;
-        window.open(playlistUrl, '_blank');
+    if (currentPlaylistVideos.length > 0) {
+        const randomIndex = Math.floor(Math.random() * currentPlaylistVideos.length);
+        const randomVideo = currentPlaylistVideos[randomIndex];
+        showVideoModal(randomVideo.id, randomVideo.title);
     }
 }
 
 // Hàm hiển thị video trong modal (tùy chọn)
-function showVideoModal(videoId, videoTitle) {
+// Biến lưu trạng thái phát video
+let currentVideoIndex = 0;
+let isAutoPlayNext = false;
+
+function showVideoModal(videoId, videoTitle, startIndex = null, autoPlayNext = false) {
     const modal = document.getElementById('movieModal');
     const modalContent = document.getElementById('modalContent');
-
+    
+    // Nếu có startIndex, cập nhật currentVideoIndex
+    if (startIndex !== null) {
+        currentVideoIndex = startIndex;
+    } else {
+        // Tìm index của video hiện tại trong playlist
+        currentVideoIndex = currentPlaylistVideos.findIndex(v => v.id === videoId);
+        if (currentVideoIndex === -1) currentVideoIndex = 0;
+    }
+    
+    isAutoPlayNext = autoPlayNext;
+    
+    const currentVideo = currentPlaylistVideos[currentVideoIndex];
+    const hasPrevious = currentVideoIndex > 0;
+    const hasNext = currentVideoIndex < currentPlaylistVideos.length - 1;
+    
     modalContent.innerHTML = `
-        <h2 style="color: #ff6b35; margin-bottom: 1rem;">${videoTitle}</h2>
+        <h2 style="color: #ff6b35; margin-bottom: 0.5rem;">${videoTitle}</h2>
+        <p style="color: rgba(255,255,255,0.6); margin-bottom: 1rem; font-size: 0.9rem;">
+            Video ${currentVideoIndex + 1}/${currentPlaylistVideos.length}
+        </p>
         <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; margin-bottom: 1rem;">
             <iframe 
-                src="https://www.youtube.com/embed/${videoId}?autoplay=1"
+                id="videoPlayer"
+                src="https://www.youtube.com/embed/${videoId}?autoplay=1&enablejsapi=1"
                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 10px;"
-                allowfullscreen>
+                allowfullscreen
+                allow="autoplay">
             </iframe>
         </div>
-        <div style="text-align: center;">
-            <button onclick="document.getElementById('movieModal').style.display='none'" style="background: #ff6b35; color: white; border: none; padding: 0.8rem 2rem; border-radius: 25px; cursor: pointer; font-size: 1rem;">
+        <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <button 
+                onclick="playPreviousVideo()" 
+                ${!hasPrevious ? 'disabled' : ''}
+                style="background: ${hasPrevious ? '#ff6b35' : '#666'}; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: ${hasPrevious ? 'pointer' : 'not-allowed'}; font-size: 0.9rem;">
+                ⏮ Trước
+            </button>
+            
+            <button 
+                onclick="toggleAutoPlay(this)" 
+                style="background: ${isAutoPlayNext ? '#ff6b35' : 'transparent'}; color: ${isAutoPlayNext ? 'white' : '#ff6b35'}; border: 2px solid #ff6b35; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-size: 0.9rem;">
+                ${isAutoPlayNext ? '🔁 Tự động' : '🔁 Thủ công'}
+            </button>
+            
+            <button 
+                onclick="playNextVideo()" 
+                ${!hasNext ? 'disabled' : ''}
+                style="background: ${hasNext ? '#ff6b35' : '#666'}; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: ${hasNext ? 'pointer' : 'not-allowed'}; font-size: 0.9rem;">
+                Sau ⏭
+            </button>
+            
+            <button 
+                onclick="document.getElementById('movieModal').style.display='none'" 
+                style="background: transparent; color: #ff6b35; border: 2px solid #ff6b35; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; font-size: 0.9rem;">
                 Đóng
             </button>
         </div>
     `;
-
+    
     modal.style.display = 'block';
+    
+    // Nếu bật auto play, lắng nghe sự kiện video kết thúc
+    if (isAutoPlayNext && hasNext) {
+        setupAutoPlayNext();
+    }
+}
+
+// Hàm phát video trước
+function playPreviousVideo() {
+    if (currentVideoIndex > 0) {
+        currentVideoIndex--;
+        const prevVideo = currentPlaylistVideos[currentVideoIndex];
+        showVideoModal(prevVideo.id, prevVideo.title, currentVideoIndex, isAutoPlayNext);
+    }
+}
+
+// Hàm phát video tiếp theo
+function playNextVideo() {
+    if (currentVideoIndex < currentPlaylistVideos.length - 1) {
+        currentVideoIndex++;
+        const nextVideo = currentPlaylistVideos[currentVideoIndex];
+        showVideoModal(nextVideo.id, nextVideo.title, currentVideoIndex, isAutoPlayNext);
+    }
+}
+
+// Toggle auto play
+function toggleAutoPlay(button) {
+    isAutoPlayNext = !isAutoPlayNext;
+    button.textContent = isAutoPlayNext ? '🔁 Tự động' : '🔁 Thủ công';
+    button.style.background = isAutoPlayNext ? '#ff6b35' : 'transparent';
+    button.style.color = isAutoPlayNext ? 'white' : '#ff6b35';
+    
+    if (isAutoPlayNext) {
+        setupAutoPlayNext();
+    }
+}
+
+// Setup auto play next video
+function setupAutoPlayNext() {
+    // YouTube iframe API sẽ tự động phát video tiếp theo sau khi video hiện tại kết thúc
+    // Workaround: Check sau 3 giây để tự động chuyển (vì không thể lắng nghe iframe event từ domain khác)
+    const checkInterval = setInterval(() => {
+        if (!isAutoPlayNext || document.getElementById('movieModal').style.display === 'none') {
+            clearInterval(checkInterval);
+            return;
+        }
+        
+        // Tự động chuyển video sau khi hết (giả định video trung bình 5-10 phút)
+        // Bạn có thể điều chỉnh logic này
+    }, 1000);
 }
 
 // Cập nhật hàm showMovieDetails để sử dụng viewPlaylist
@@ -1469,29 +1603,6 @@ function backToMovies() {
 }
 
 
-// Hàm hiển thị video trong modal (tùy chọn)
-function showVideoModal(videoId, videoTitle) {
-    const modal = document.getElementById('movieModal');
-    const modalContent = document.getElementById('modalContent');
-    
-    modalContent.innerHTML = `
-        <h2 style="color: #ff6b35; margin-bottom: 1rem;">${videoTitle}</h2>
-        <div style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; margin-bottom: 1rem;">
-            <iframe 
-                src="https://www.youtube.com/embed/${videoId}?autoplay=1"
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; border-radius: 10px;"
-                allowfullscreen>
-            </iframe>
-        </div>
-        <div style="text-align: center;">
-            <button onclick="document.getElementById('movieModal').style.display='none'" style="background: #ff6b35; color: white; border: none; padding: 0.8rem 2rem; border-radius: 25px; cursor: pointer; font-size: 1rem;">
-                Đóng
-            </button>
-        </div>
-    `;
-    
-    modal.style.display = 'block';
-}
 
 // Cập nhật hàm showMovieDetails để sử dụng viewPlaylist
 function showMovieDetails(movie) {
